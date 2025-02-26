@@ -10,8 +10,14 @@ const SessionTable = () => {
   const fetchAddress = async (latitude, longitude) => {
     try {
       const response = await fetch(
-        `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=b5b55deb46ef473fa730a340f28684a3`
-      );
+        `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=b5b55deb46ef473fa730a340f28684a3`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          mode: "cors",
+          credentials: "include"
+        });
       const data = await response.json();
       if (data.results.length > 0) {
         return data.results[0].formatted;
