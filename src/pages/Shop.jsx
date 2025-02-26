@@ -16,17 +16,24 @@ const Shop = () => {
   useEffect(() => {
     const fetchProductsById = async () => {
       try {
-        const { data } = await axios.get("/api/products"); 
+        const { data } = await axios.get("http://localhost:5001/api/products", {
+          withCredentials: true, // ✅ علشان يرسل الكوكيز
+        });
+  
+        console.log("📦 المنتجات:", data); // ✅ تأكد إن المنتجات بتيجي صح
         dispatch(setProducts(data.products));
       } catch (err) {
         setError("فشل في جلب المنتجات، حاول لاحقًا.");
-        console.error("API Error:", err);
+        console.error("❌ API Error:", err.response?.data || err.message);
       }
     };
-
+  
     fetchProductsById();
-  }, [checked, radio, dispatch]); 
+  }, [checked, radio, dispatch]);
+  
 
+
+  
 
 
   if (error) return <p>{error}</p>;
