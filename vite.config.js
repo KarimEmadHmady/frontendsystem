@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api/": "http://localhost:5001",
-      "/uploads/": "http://localhost:5001",
+      "/api/": "https://backendsystem-rnf1yw3gk-karims-projects-c3a021f0.vercel.app",
+      "/uploads/": "https://backendsystem-rnf1yw3gk-karims-projects-c3a021f0.vercel.app",
     },
   },
 });
