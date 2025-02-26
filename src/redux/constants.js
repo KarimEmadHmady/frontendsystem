@@ -6,7 +6,7 @@
 // export const ORDERS_URL = "https://backendsystem-rnf1yw3gk-karims-projects-c3a021f0.vercel.app/api/orders";
 // export const PAYPAL_URL = "https://backendsystem-rnf1yw3gk-karims-projects-c3a021f0.vercel.app/api/config/paypal";
 
-export const BASE_URL = 'http://localhost:5001';
+export const BASE_URL = 'https://backendsystem-rnf1yw3gk-karims-projects-c3a021f0.vercel.app';
 
 export const USERS_URL = `${BASE_URL}/api/users`;
 export const CATEGORY_URL = `${BASE_URL}/api/category`;
