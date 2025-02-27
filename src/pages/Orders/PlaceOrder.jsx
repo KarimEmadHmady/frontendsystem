@@ -32,7 +32,7 @@ const PlaceOrder = () => {
         shippingAddress: cart.shippingAddress,
         itemsPrice: cart.itemsPrice,
         totalPrice,
-        paymentMethod: "PayPal",
+        
       }).unwrap();
       
       
