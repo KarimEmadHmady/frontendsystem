@@ -16,11 +16,11 @@ const Shop = () => {
   useEffect(() => {
     const fetchProductsById = async () => {
       try {
-        const { data } = await axios.get("https://backendsystem-nrel836dl-karims-projects-c3a021f0.vercel.app/api/products", {
-          withCredentials: true, // ✅ علشان يرسل الكوكيز
+        const { data } = await axios.get("http://localhost:5001/api/products", {
+          withCredentials: true, 
         });
   
-        console.log("📦 المنتجات:", data); // ✅ تأكد إن المنتجات بتيجي صح
+        console.log("📦 المنتجات:", data); 
         dispatch(setProducts(data.products));
       } catch (err) {
         setError("فشل في جلب المنتجات، حاول لاحقًا.");
