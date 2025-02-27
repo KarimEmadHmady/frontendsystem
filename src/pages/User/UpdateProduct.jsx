@@ -15,7 +15,7 @@ const UpdateProduct = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5001/api/products/update-brand`,
+        `https://backendsystem.vercel.app/api/products/update-brand`,
         { serialnumber: serialNumber, brand },
         {
           withCredentials: true,

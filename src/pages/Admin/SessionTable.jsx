@@ -30,7 +30,7 @@ const SessionTable = () => {
     const fetchSessions = async () => {
       setIsLoading(true); 
       try {
-        const response = await axios.get("http://localhost:5001/api/sessions" ,  { withCredentials: true } ) 
+        const response = await axios.get("https://backendsystem.vercel.app/api/sessions" ,  { withCredentials: true } ) 
         
        const data = response.data;
 
