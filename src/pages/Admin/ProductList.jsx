@@ -105,7 +105,7 @@ const ProductList = () => {
             </label>
           </div>
 
-          <div className="p-3">
+          <div className="p-3 mb-[70px]">
             <div className="flex flex-wrap">
               <div className="one">
                 <label htmlFor="name">Name</label> <br />
