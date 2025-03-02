@@ -317,3 +317,7 @@ table {
   }
 
 }
+
+.page-ltr {
+  direction: ltr !important;
+}

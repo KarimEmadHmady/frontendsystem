@@ -64,7 +64,7 @@ const Register = () => {
               type="text"
               id="name"
               className="mt-1 p-2 border rounded w-full"
-              placeholder="ادخم أسمك"
+              placeholder="ادخل أسمك"
               value={username}
               onChange={(e) => setName(e.target.value)}
             />

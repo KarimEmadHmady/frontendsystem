@@ -40,14 +40,14 @@ const Shipping = () => {
       <ProgressSteps step1 step2 />
       <div className="mt-[10rem] flex justify-around items-center flex-wrap">
         <form onSubmit={submitHandler} className="w-[40rem]">
-          <h1 className="text-2xl font-semibold mb-4 px-5">Add Information</h1>
+          <h1 className="text-2xl font-semibold mb-4 px-5">تضف المعلومات الاتية</h1>
           
           <div className="mb-4">
-            <label className="block text-white mb-2">Serial Number</label>
+            <label className="block text-white mb-2"> رقم السيريال</label>
             <input
               type="text"
               className="w-full p-2 border rounded"
-              placeholder="Enter Serial Number"
+              placeholder="ادخل رقم السيريال للمنتجات التى تريد عمل طلب بها"
               value={serialNumber}
               required
               onChange={(e) => setSerialNumber(e.target.value)}
@@ -55,11 +55,11 @@ const Shipping = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-white mb-2">Product Name</label>
+            <label className="block text-white mb-2">اسم المنتج </label>
             <input
               type="text"
               className="w-full p-2 border rounded"
-              placeholder="Enter Product Name"
+              placeholder="ادخل اسم للمنتجات التى تريد عمل طلب بها"
               value={productName}
               required
               onChange={(e) => setProductName(e.target.value)}
@@ -67,11 +67,11 @@ const Shipping = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-white mb-2">Salesman</label>
+            <label className="block text-white mb-2">البائع</label>
             <input
               type="text"
               className="w-full p-2 border rounded"
-              placeholder="Enter Salesman Name"
+              placeholder="ادخل اسم البائع"
               value={salesman}
               required
               onChange={(e) => setSalesman(e.target.value)}
@@ -82,7 +82,7 @@ const Shipping = () => {
             className="bg-[#5f2476] text-white py-2 px-4 rounded-full text-lg w-full"
             type="submit"
           >
-            Continue
+            تابع اكمال الطلب
           </button>
         </form>
       </div>

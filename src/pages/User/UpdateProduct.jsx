@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-
+import { Link } from "react-router-dom";
 const UpdateProduct = () => {
   const [serialNumber, setSerialNumber] = useState('');
   const [brand, setBrand] = useState('');
@@ -43,7 +43,7 @@ const UpdateProduct = () => {
 
   return (
     <div className="brand-serialnumber max-w-xl mx-auto p-6 bg-black rounded-lg shadow-lg mt-[150px]">
-      <h2 className="text-3xl font-semibold text-center mb-6">أضف المنتج واسم العلامة التجارية عن طريق رقم السيريال</h2>
+      <h2 className="text-1xl font-semibold text-center mb-6">أضف المنتج واسم العلامة التجارية عن طريق رقم السيريال</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="serialNumber" className="block text-lg font-medium text-white-700">
@@ -92,6 +92,9 @@ const UpdateProduct = () => {
               </li>
             ))}
           </ul>
+          <div>
+               <Link to="/shop" className="text-red-500	">  اذهب لمشاهدة المنتجات المضافة  </Link>
+          </div>
         </div>
       )}
     </div>

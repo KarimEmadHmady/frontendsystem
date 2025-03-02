@@ -84,7 +84,7 @@ const Adminproducts = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto page-ltr">
       <AdminMenu />
       <div className="flex md:flex-row">
         <div className={`list-filter bg-[#151515] p-3 mt-2 mb-2 transition-all duration-300 ${isFilterOpen ? "left-0" : "left-[-267px]"}`}>

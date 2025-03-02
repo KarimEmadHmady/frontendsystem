@@ -59,22 +59,22 @@ const Navigation = () => {
           to="/"
           className="flex items-center transition-transform transform hover:opacity-80"
         >
-          <AiOutlineHome className="ml-2 mt-[3rem]" size={26} />
-          <span className=" nav-item-name mt-[3rem]">الرئيسية</span> {/* hidden  */}
+          <AiOutlineHome className="icone-menu-home ml-2 mt-[3rem]" size={26} />
+          <span className=" nav-item-name mt-[3rem]">الرئيسية</span> 
         </Link>
 
         <Link
           to="/shop"
           className="flex items-center transition-transform transform hover:opacity-80"
         >
-          <AiOutlineShopping className="ml-2 mt-[3rem]" size={26} />
-          <span className=" nav-item-name mt-[3rem]">المنتجات</span>  {/* hidden */}
+          <AiOutlineShopping className="icone-menu-home ml-2 mt-[3rem]" size={26} />
+          <span className=" nav-item-name mt-[3rem]">المنتجات</span>  
         </Link>
 
         <Link to="/cart" className="flex relative">
-          <div className="flex items-center transition-transform transform hover:opacity-80">
-            <AiOutlineShoppingCart className="mt-[3rem] ml-2" size={26} />
-            <span className=" nav-item-name mt-[3rem]">السلة</span>  {/* hidden */}
+          <div className=" navigation-container-menu-other flex items-center transition-transform transform hover:opacity-80">
+            <AiOutlineShoppingCart className="icone-menu-home mt-[3rem] ml-2" size={26} />
+            <span className=" nav-item-name mt-[3rem]">السلة</span>  
           </div>
 
           <div className="absolute top-9">
@@ -89,9 +89,9 @@ const Navigation = () => {
         </Link>
 
         <Link to="/addserialNumber" className="flex relative">
-          <div className="flex justify-center items-center transition-transform transform hover:opacity-80">
-            <FaPlusCircle  className="mt-[3rem] ml-2" size={20} />
-            <span className=" nav-item-name mt-[3rem]">إضافة منتج</span>  {/* hidden */}
+          <div className="navigation-container-menu-other flex justify-center items-center transition-transform transform hover:opacity-80">
+            <FaPlusCircle  className="icone-menu-home mt-[3rem] ml-2" size={20} />
+            <span className=" nav-item-name mt-[3rem]">إضافة منتج</span> 
             {/* <FavoritesCount /> */}
           </div>
         </Link>

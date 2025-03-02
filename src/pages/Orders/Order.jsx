@@ -17,7 +17,7 @@ const Order = () => {
   if (error) return <Message variant="danger">{error.data.message}</Message>;
 
   return (
-    <div className="page-info-order container flex flex-col ml-[10rem] md:flex-row">
+    <div className="page-info-order container flex flex-col ml-[10rem] md:flex-row page-ltr">
       <div className="md:w-2/3 pr-4">
         <div className="border gray-300 mt-5 pb-4 mb-5">
           {order.orderItems.length === 0 ? (
@@ -27,12 +27,12 @@ const Order = () => {
               <table className="w-[80%]">
                 <thead className="border-b-2">
                   <tr>
-                    <th className="p-2">Image</th>
-                    <th className="p-2">Product</th>
-                    <th className="p-2">Serial Number</th>
-                    <th className="p-2 text-center">Quantity</th>
-                    <th className="p-2">Date</th>
-                    <th className="p-2">Total</th>
+                    <th className="p-2">صورة الامنتج </th>
+                    <th className="p-2">اسم المنتج</th>
+                    <th className="p-2">رقم السيريال</th>
+                    <th className="p-2 text-center">الكمية</th>
+                    <th className="p-2">التاريخ و الوقت</th>
+                    <th className="p-2">الاجمالى</th>
                   </tr>
                 </thead>
 
@@ -77,22 +77,22 @@ const Order = () => {
 
       <div className="md:w-1/3">
         <div className="mt-5 border-gray-300 pb-4 mb-4">
-          <h2 className="text-xl font-bold mb-2">Order Information</h2>
+          <h2 className="text-xl font-bold mb-2">معلومات الطلب</h2>
           <p className="mb-4 mt-4">
-            <strong className="text-[#5f2476]">Order ID:</strong> {order._id}
+            <strong className="text-[#5f2476]">رقم الطلب:  </strong> <div>{order._id}</div>
           </p>
 
           <p className="mb-4">
-            <strong className="text-[#5f2476]">Name:</strong>{" "}
+            <strong className="text-[#5f2476]">اسم المستخدم:</strong>{" "}
             {order.user.username}
           </p>
 
           <p className="mb-4">
-            <strong className="text-[#5f2476]">Email:</strong> {order.user.email}
+            <strong className="text-[#5f2476]">البريد الالكترونى:</strong> {order.user.email}
           </p>
 
           <p className="mb-4">
-            <strong className="text-[#5f2476]">Brand:</strong>{" "}
+            <strong className="text-[#5f2476]">اسم البراند:</strong>{" "}
             {order.orderItems.map((item, index) => (
               <span key={index}>
                 {item.brand}
@@ -102,27 +102,27 @@ const Order = () => {
           </p>
 
           <p className="mb-4">
-            <strong className="text-[#5f2476]">Information:</strong>{" "}
-            <p>Serial Number: {order.shippingAddress.address}</p>
-            <p>Product Name: {order.shippingAddress.city}</p>
-            <p>Salesman: {order.shippingAddress.country}</p>
+            <strong className="text-[#5f2476]">معلومات:</strong>{" "}
+            <p>رقم السيريال : {order.shippingAddress.address}</p>
+            <p>اسم المنتج : {order.shippingAddress.city}</p>
+            <p>اسم البائع: {order.shippingAddress.country}</p>
           </p>
         </div>
 
-        <h2 className="text-xl font-bold mb-2 mt-[1rem]">Order Summary</h2>
+        <h2 className="text-xl font-bold mb-2 mt-[1rem]">ملخص الطلب</h2>
 
         <div className="flex justify-between mb-2">
-          <span>Total number of Items</span>
+          <span>اجمالى عدد المنتجات فى الطلب</span>
           <span>{order.orderItems.reduce((acc, item) => acc + item.qty, 0)}</span>
         </div>
 
         <div className="flex justify-between mb-2">
-          <span>Products Name</span>
+          <span>اسماء المنتجات المضافة فى الطلب</span>
           <span>{order.orderItems.map((item) => item.name).join(", ")}</span>
         </div>
 
         <div className="flex justify-between mb-2">
-          <span>Total Price</span>
+          <span>اجمالى السعر </span>
           <span>L.E {order.itemsPrice}</span>
         </div>
       </div>

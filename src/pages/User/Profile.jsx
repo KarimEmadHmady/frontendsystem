@@ -49,13 +49,13 @@ const Profile = () => {
     <div className="container mx-auto p-4 mt-[10rem]">
       <div className="flex justify-center align-center md:flex md:space-x-4">
         <div className="md:w-1/3">
-          <h2 className="text-2xl font-semibold mb-4">Update Profile</h2>
+          <h2 className="text-2xl font-semibold mb-4">تحديث الملف الشخصي</h2>
           <form onSubmit={submitHandler}>
             <div className="mb-4">
-              <label className="block text-white mb-2">Name</label>
+              <label className="block text-white mb-2">الاسم</label>
               <input
                 type="text"
-                placeholder="Enter name"
+                placeholder="ادخل الاسم هنا "
                 className="form-input p-4 rounded-sm w-full"
                 value={username}
                 onChange={(e) => setUserName(e.target.value)}
@@ -63,10 +63,10 @@ const Profile = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-white mb-2">Email Address</label>
+              <label className="block text-white mb-2">البريد الالكترونى</label>
               <input
                 type="email"
-                placeholder="Enter email"
+                placeholder="ادخل البريد"
                 className="form-input p-4 rounded-sm w-full"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -74,10 +74,10 @@ const Profile = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-white mb-2">Password</label>
+              <label className="block text-white mb-2">الرقم السرى</label>
               <input
                 type="password"
-                placeholder="Enter password"
+                placeholder="ادخل الرقم السرى "
                 className="form-input p-4 rounded-sm w-full"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -85,10 +85,10 @@ const Profile = () => {
             </div>
 
             <div className="mb-4">
-              <label className="block text-white mb-2">Confirm Password</label>
+              <label className="block text-white mb-2">تأكيد الرقم السرى</label>
               <input
                 type="password"
-                placeholder="Confirm password"
+                placeholder="اعادة كتابة الرقم السرى"
                 className="form-input p-4 rounded-sm w-full"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
@@ -100,14 +100,14 @@ const Profile = () => {
                 type="submit"
                 className="bg-[#5f2476] text-white py-2 px-4 rounded hover:bg-[#5f2476]"
               >
-                Update
+                تحديث
               </button>
 
               <Link
                 to="/user-orders"
                 className="bg-[#5f2476] text-white py-2 px-4 rounded hover:bg-[#5f2476]"
               >
-                My Orders
+                الطلبات الخاصة بى 
               </Link>
             </div>
             {loadingUpdateProfile && <Loader />}

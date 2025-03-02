@@ -24,15 +24,15 @@ const Cart = () => {
 
   return (
     <>
-      <div className="container flex justify-around items-start flex wrap mx-auto mt-8">
+      <div className="container flex justify-around items-start flex wrap mx-auto mt-8 page-ltr">
         {cartItems.length === 0 ? (
           <div>
-            Your cart is empty <Link to="/shop">Go To Shop</Link>
+            لا يوجد منتجات مضافة لعمل طلب   <Link to="/addserialNumber" className="text-red-500	">  اذهب لاضافة منتج  </Link>
           </div>
         ) : (
           <>
             <div className="flex flex-col w-[80%]">
-              <h1 className="text-2xl font-semibold mb-4">Shopping Cart</h1>
+              <h1 className="text-2xl font-semibold mb-4">طلب منتج</h1>
 
               {cartItems.map((item) => (
                 <div key={item._id} className="flex items-enter mb-[1rem] pb-2">
@@ -51,7 +51,7 @@ const Cart = () => {
 
                     <div className="mt-2 text-white">{item.brand}</div>
                     <p className="my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
-                       Serial Number:   {item.serialnumber} 
+                       رقمالسيريال:   {item.serialnumber} 
               </p>
                     <div className="mt-2 text-white font-bold">
                       L.E {item.price}
@@ -88,7 +88,7 @@ const Cart = () => {
               <div className="mt-8 w-[40rem]">
                 <div className="p-4 rounded-lg">
                   <h2 className="text-xl font-semibold mb-2">
-                    Items ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+                    عدد المنتجات ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
                   </h2>
 
                   <div className=" text-2xl font-bold">
@@ -103,7 +103,7 @@ const Cart = () => {
                     disabled={cartItems.length === 0}
                     onClick={checkoutHandler}
                   >
-                    Proceed To Checkout
+                    اكمل خطوات الطلب
                   </button>            
                 </div>
               </div>

@@ -58,7 +58,7 @@ const SessionTable = () => {
   }, []);
 
   return (
-    <div className="p-4 p-[120px] page-Sessiontable">
+    <div className="p-4 p-[120px] page-Sessiontable page-ltr">
       <AdminMenu />
       <h2 className="text-xl font-bold mb-4">سجلات التسجيل</h2>
 

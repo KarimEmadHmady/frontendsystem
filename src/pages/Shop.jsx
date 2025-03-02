@@ -10,43 +10,45 @@ const Shop = () => {
   const { products, checked, radio } = useSelector((state) => state.shop);
 
   const [error, setError] = useState("");
-
-
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProductsById = async () => {
       try {
-        const { data } = await axios.get("https://backendsystem.vercel.app/api/products", {
-          withCredentials: true, 
-        });
-  
-        console.log("📦 المنتجات:", data); 
-        dispatch(setProducts(data.products));
+        setLoading(true);
+        setTimeout(async () => {
+          const { data } = await axios.get("https://backendsystem.vercel.app/api/products", {
+            withCredentials: true, 
+          });
+
+          console.log("📦 المنتجات:", data); 
+          dispatch(setProducts(data.products));
+          setLoading(false);
+        }, 2000); // تأخير لمدة ثانيتين
       } catch (err) {
-        setError("فشل في جلب المنتجات، حاول لاحقًا.");
-        console.error("❌ API Error:", err.response?.data || err.message);
+        const errorMessage = err.response?.data?.message || "فشل في جلب المنتجات، ادخل السيريال و اسم البراند من صفحة اضافة منتج.";
+        setError(errorMessage);
+        console.error("❌ API Error:", errorMessage);
+        setLoading(false);
       }
     };
-  
+
     fetchProductsById();
   }, [checked, radio, dispatch]);
-  
 
-
-  
-
-
-  if (error) return <p>{error}</p>;
+  if (error) return <p className="text-red-500 text-center">{error}</p>;
 
   return (
-    <div className={`container mx-auto`}>
+    <div className="container mx-auto">
       <div className="p-3 container-products-shoppage">
         <h2 className="h4 text-center mb-2">
-          {products?.length} Products
+          {products?.length} منتجات
         </h2>
         <div className="flex flex-wrap justify-center">
-          {products.length === 0 ? (
+          {loading ? (
             <Loader className="text-center" />
+          ) : products.length === 0 ? (
+            <p className="text-center">لا توجد منتجات متاحة</p>
           ) : (
             products?.map((p) => (
               <div className="p-3" key={p._id}>
@@ -61,3 +63,4 @@ const Shop = () => {
 };
 
 export default Shop;
+

@@ -9,7 +9,7 @@ const Home = () => {
             الخدمة أولًا
           </p>
 
-          <h2 className="mt-6 text-2xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mt-6 text-2xl font-bold leading-tight text-white sm:text-2xl lg:text-3xl">
             احتياجات العملاء تقود تميزنا.
           </h2>
 
