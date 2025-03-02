@@ -52,11 +52,11 @@
     width: 100%;
   }
   
-   .nav-item-name a {
+   .navigation-container-menu a {
     flex-direction: column;
   }
 
-  .nav-item-name svg {
+  .navigation-container-menu svg {
     margin-left: 0 ;
     margin-top: 2px;
   }
