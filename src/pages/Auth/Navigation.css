@@ -52,17 +52,16 @@
     width: 100%;
   }
   
-/*   .nav-item-name {
-    display: none;
-    transition: opacity 0.2s ease-in-out; 
-    
+   .nav-item-name a {
+    flex-direction: column;
+  }
+
+  .nav-item-name svg {
+    margin-left: 0 ;
+    margin-top: 2px;
   }
   
-  #navigation-container:hover .nav-item-name {
-    display: none;
-    opacity: 1;
-    
-  } */
+
   
   .search-input {
     display: none;
