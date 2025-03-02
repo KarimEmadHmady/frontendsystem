@@ -64,7 +64,7 @@
 //           to="/"
 //           className="flex items-center transition-transform transform hover:translate-x-2"
 //         >
-//           <AiOutlineHome className="mr-2 mt-[3rem]" size={26} />
+//           <AiOutlineHome className="ml-2 mt-[3rem]" size={26} />
 //           <span className="hidden nav-item-name mt-[3rem]">HOME</span>{" "}
 //         </Link>
 
@@ -72,7 +72,7 @@
 //           to="/shop"
 //           className="flex items-center transition-transform transform hover:translate-x-2"
 //         >
-//           <AiOutlineShopping className="mr-2 mt-[3rem]" size={26} />
+//           <AiOutlineShopping className="ml-2 mt-[3rem]" size={26} />
 //           <span className="hidden nav-item-name mt-[3rem]">Products</span>{" "}
 //         </Link>
 
@@ -243,14 +243,14 @@ import {
   AiOutlineUserAdd,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
-import { FaHeart } from "react-icons/fa";
+import { AiOutlinePlusCircle  } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Navigation.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../../redux/api/usersApiSlice";
 import { logout } from "../../redux/features/auth/authSlice";
-import FavoritesCount from "../Products/FavoritesCount";
+// import FavoritesCount from "../Products/FavoritesCount";
 
 const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -296,22 +296,22 @@ const Navigation = () => {
           to="/"
           className="flex items-center transition-transform transform hover:translate-x-2"
         >
-          <AiOutlineHome className="mr-2 mt-[3rem]" size={26} />
-          <span className="hidden nav-item-name mt-[3rem]">الرئيسية</span>
+          <AiOutlineHome className="ml-2 mt-[3rem]" size={26} />
+          <span className=" nav-item-name mt-[3rem]">الرئيسية</span> {/* hidden */}
         </Link>
 
         <Link
           to="/shop"
           className="flex items-center transition-transform transform hover:translate-x-2"
         >
-          <AiOutlineShopping className="mr-2 mt-[3rem]" size={26} />
-          <span className="hidden nav-item-name mt-[3rem]">المنتجات</span>
+          <AiOutlineShopping className="ml-2 mt-[3rem]" size={26} />
+          <span className=" nav-item-name mt-[3rem]">المنتجات</span>  {/* hidden */}
         </Link>
 
         <Link to="/cart" className="flex relative">
           <div className="flex items-center transition-transform transform hover:translate-x-2">
-            <AiOutlineShoppingCart className="mt-[3rem] mr-2" size={26} />
-            <span className="hidden nav-item-name mt-[3rem]">السلة</span>
+            <AiOutlineShoppingCart className="mt-[3rem] ml-2" size={26} />
+            <span className=" nav-item-name mt-[3rem]">السلة</span>  {/* hidden */}
           </div>
 
           <div className="absolute top-9">
@@ -325,11 +325,11 @@ const Navigation = () => {
           </div>
         </Link>
 
-        <Link to="/favorite" className="flex relative">
+        <Link to="/addserialNumber" className="flex relative">
           <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
-            <FaHeart className="mt-[3rem] mr-2" size={20} />
-            <span className="hidden nav-item-name mt-[3rem]">المفضلة</span>
-            <FavoritesCount />
+            <AiOutlinePlusCircle  className="mt-[3rem] ml-2" size={20} />
+            <span className=" nav-item-name mt-[3rem]">إضافة منتج</span>  {/* hidden */}
+            {/* <FavoritesCount /> */}
           </div>
         </Link>
       </div>
@@ -428,7 +428,7 @@ const Navigation = () => {
             <li>
               <button
                 onClick={logoutHandler}
-                className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+                className="block w-full px-4 py-2 text-right hover:bg-gray-100"
               >
                 تسجيل الخروج
               </button>
