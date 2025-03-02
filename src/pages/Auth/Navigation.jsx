@@ -62,7 +62,7 @@
 //       <div className="flex flex-col justify-center  navigation-container-menu">
 //         <Link
 //           to="/"
-//           className="flex items-center transition-transform transform hover:translate-x-2"
+//           className="flex items-center transition-transform transform hover:opacity-80"
 //         >
 //           <AiOutlineHome className="ml-2 mt-[3rem]" size={26} />
 //           <span className="hidden nav-item-name mt-[3rem]">HOME</span>{" "}
@@ -70,14 +70,14 @@
 
 //         <Link
 //           to="/shop"
-//           className="flex items-center transition-transform transform hover:translate-x-2"
+//           className="flex items-center transition-transform transform hover:opacity-80"
 //         >
 //           <AiOutlineShopping className="ml-2 mt-[3rem]" size={26} />
 //           <span className="hidden nav-item-name mt-[3rem]">Products</span>{" "}
 //         </Link>
 
 //         <Link to="/cart" className="flex relative">
-//           <div className="flex items-center transition-transform transform hover:translate-x-2">
+//           <div className="flex items-center transition-transform transform hover:opacity-80">
 //             <AiOutlineShoppingCart className="mt-[3rem] mr-2" size={26} />
 //             <span className="hidden nav-item-name mt-[3rem]">Cart</span>{" "}
 //           </div>
@@ -94,7 +94,7 @@
 //         </Link>
 
 //         <Link to="/favorite" className="flex relative">
-//           <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
+//           <div className="flex justify-center items-center transition-transform transform hover:opacity-80">
 //             <FaHeart className="mt-[3rem] mr-2" size={20} />
 //             <span className="hidden nav-item-name mt-[3rem]">
 //               Favorites
@@ -210,7 +210,7 @@
 //             <li>
 //               <Link
 //                 to="/login"
-//                 className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+//                 className="flex items-center mt-5 transition-transform transform hover:opacity-80"
 //               >
 //                 <AiOutlineLogin className="mr-2 mt-[4px]" size={26} />
 //                 <span className="hidden nav-item-name">LOGIN</span>
@@ -219,7 +219,7 @@
 //             <li>
 //               <Link
 //                 to="/register"
-//                 className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+//                 className="flex items-center mt-5 transition-transform transform hover:opacity-80"
 //               >
 //                 <AiOutlineUserAdd size={26} />
 //                 <span className="hidden nav-item-name">REGISTER</span>
@@ -294,7 +294,7 @@ const Navigation = () => {
       <div className="flex flex-col justify-center navigation-container-menu">
         <Link
           to="/"
-          className="flex items-center transition-transform transform hover:translate-x-2"
+          className="flex items-center transition-transform transform hover:opacity-80"
         >
           <AiOutlineHome className="ml-2 mt-[3rem]" size={26} />
           <span className=" nav-item-name mt-[3rem]">الرئيسية</span> {/* hidden  */}
@@ -302,14 +302,14 @@ const Navigation = () => {
 
         <Link
           to="/shop"
-          className="flex items-center transition-transform transform hover:translate-x-2"
+          className="flex items-center transition-transform transform hover:opacity-80"
         >
           <AiOutlineShopping className="ml-2 mt-[3rem]" size={26} />
           <span className=" nav-item-name mt-[3rem]">المنتجات</span>  {/* hidden */}
         </Link>
 
         <Link to="/cart" className="flex relative">
-          <div className="flex items-center transition-transform transform hover:translate-x-2">
+          <div className="flex items-center transition-transform transform hover:opacity-80">
             <AiOutlineShoppingCart className="mt-[3rem] ml-2" size={26} />
             <span className=" nav-item-name mt-[3rem]">السلة</span>  {/* hidden */}
           </div>
@@ -326,7 +326,7 @@ const Navigation = () => {
         </Link>
 
         <Link to="/addserialNumber" className="flex relative">
-          <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
+          <div className="flex justify-center items-center transition-transform transform hover:opacity-80">
             <FaPlusCircle  className="mt-[3rem] ml-2" size={20} />
             <span className=" nav-item-name mt-[3rem]">إضافة منتج</span>  {/* hidden */}
             {/* <FavoritesCount /> */}
@@ -440,7 +440,7 @@ const Navigation = () => {
             <li>
               <Link
                 to="/login"
-                className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+                className="flex items-center mt-5 transition-transform transform hover:opacity-80"
               >
                 <AiOutlineLogin className="mr-2 mt-[4px]" size={26} />
                 <span className="hidden nav-item-name">تسجيل الدخول</span>
@@ -449,7 +449,7 @@ const Navigation = () => {
             <li>
               <Link
                 to="/register"
-                className="flex items-center mt-5 transition-transform transform hover:translate-x-2"
+                className="flex items-center mt-5 transition-transform transform hover:opacity-80"
               >
                 <AiOutlineUserAdd size={26} />
                 <span className="hidden nav-item-name">إنشاء حساب</span>
