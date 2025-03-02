@@ -53,8 +53,7 @@
   }
   
   .nav-item-name {
-    display: none;
-    transition: opacity 0.2s ease-in-out; 
+font-size: 10px;
     
   }
   
