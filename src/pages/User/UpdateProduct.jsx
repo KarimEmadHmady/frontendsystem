@@ -43,16 +43,16 @@ const UpdateProduct = () => {
 
   return (
     <div className="brand-serialnumber max-w-xl mx-auto p-6 bg-black rounded-lg shadow-lg mt-[150px]">
-      <h2 className="text-3xl font-semibold text-center mb-6">Add Product And Brand Name by Serial Number</h2>
+      <h2 className="text-3xl font-semibold text-center mb-6">أضف المنتج واسم العلامة التجارية عن طريق رقم السيريال</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="serialNumber" className="block text-lg font-medium text-white-700">
-            Serial Number
+            رقم السيريال
           </label>
           <input
             type="text"
             id="serialNumber"
-            placeholder='Enter Serial Number'
+            placeholder='ادخل السيريال'
             value={serialNumber}
             onChange={(e) => setSerialNumber(e.target.value)}
             required
@@ -61,12 +61,12 @@ const UpdateProduct = () => {
         </div>
         <div className="mb-6">
           <label htmlFor="brand" className="block text-lg font-medium text-white-700">
-            Brand Name
+          اسم العلامة التجارية 
           </label>
           <input
             type="text"
             id="brand"
-            placeholder='Enter Brand Name'
+            placeholder='ادخل اسم البراند'
             value={brand}
             onChange={(e) => setBrand(e.target.value)}
             required
@@ -78,17 +78,17 @@ const UpdateProduct = () => {
           disabled={loading}
           className={`w-full py-2 text-white font-semibold rounded-md focus:outline-none ${loading ? 'bg-gray-400' : 'bg-[#5f2476] hover:bg-[#5f2476]'} transition duration-300`}
         >
-          {loading ? 'loading...' : 'Add Product'}
+          {loading ? 'أضف المنتج...' : 'أضف المنتج'}
         </button>
       </form>
 
       {products.length > 0 && (
         <div className="mt-6">
-          <h3 className="text-xl font-semibold text-white">Added Products:</h3>
+          <h3 className="text-xl font-semibold text-white">أضف منتج :</h3>
           <ul className="mt-4 text-white">
             {products.map((product, index) => (
               <li key={index} className="mb-2">
-                Serial Number: {product.serialNumber} | Brand: {product.brand}
+                رقم السيريال : {product.serialNumber} | العلامة التجارية: {product.brand}
               </li>
             ))}
           </ul>
