@@ -5,13 +5,14 @@ const Home = () => {
       <section className="first-sections-home py-10  sm:py-16 lg:py-24">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="max-w-xl mx-auto text-center">
-            <p className=" main-header-p text-sm font-semibold tracking-widest text-[#5f2476] uppercase">
-            Service-First
-            </p>
+          <p className="main-header-p text-sm font-semibold tracking-widest text-[#5f2476] uppercase">
+            الخدمة أولًا
+          </p>
 
-            <h2 className="mt-6 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
-            Customer needs drive our excellence.
-            </h2>
+          <h2 className="mt-6 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+            احتياجات العملاء تقود تميزنا.
+          </h2>
+
           </div>
 
           <div className="grid items-center grid-cols-1 mt-12 gap-y-10 lg:grid-cols-5 sm:mt-20 gap-x-4">
@@ -32,12 +33,13 @@ const Home = () => {
                   />
                 </svg>
                 <div className="ml-5">
-                  <h3 className="text-xl font-semibold text-white">
-                  Professional & Attentive Service
-                  </h3>
-                  <p className="mt-3 text-base text-gray-300">
-                  We actively listen to our customers and provide high-quality solutions with a sincere approach.
-                  </p>
+                <h3 className="text-xl font-semibold text-white">
+                  خدمة احترافية ومُتفانية
+                </h3>
+                <p className="mt-3 text-base text-gray-300">
+                  نستمع إلى عملائنا بإنصات، ونقدم حلولًا عالية الجودة بأسلوب صادق.
+                </p>
+
                 </div>
               </div>
 
@@ -57,12 +59,13 @@ const Home = () => {
                   />
                 </svg>
                 <div className="ml-5">
-                  <h3 className="text-xl font-semibold text-white">
-                   Worldwide Presence
+                <h3 className="text-xl font-semibold text-white">
+                    وجود عالمي
                   </h3>
                   <p className="mt-3 text-base text-gray-300">
-                  With offices in multiple countries and 100+ employees, we ensure global operational excellence.
+                    من خلال مكاتبنا في عدة دول وأكثر من 100 موظف، نضمن التميز التشغيلي على مستوى العالم.
                   </p>
+
                 </div>
               </div>
 
@@ -82,12 +85,13 @@ const Home = () => {
                   />
                 </svg>
                 <div className="ml-5">
-                  <h3 className="text-xl font-semibold text-white">
-                  Strong Manufacturing Backbone
-                  </h3>
-                  <p className="mt-3 text-base text-gray-300">
-                  Six production bases in China guarantee a seamless global supply chain system.
-                  </p>
+                <h3 className="text-xl font-semibold text-white">
+                  قاعدة تصنيعية قوية
+                </h3>
+                <p className="mt-3 text-base text-gray-300">
+                  تضمن ستة مراكز إنتاج في الصين نظام سلسلة إمداد عالمي سلس.
+                </p>
+
                 </div>
               </div>
             </div>
@@ -106,15 +110,16 @@ const Home = () => {
       <section className="sections-contact">
         <div className="container px-6 py-12 mx-auto">
           <div className="text-center">
-            <p className="font-medium text-blue-500 dark:text-blue-400">
-              Contact us
-            </p>
-            <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
-              We’d love to hear from you
-            </h1>
-            <p className="mt-3 text-gray-500 dark:text-gray-400">
-              Chat to our friendly team.
-            </p>
+          <p className="font-medium text-blue-500 dark:text-blue-400">
+            تواصل معنا
+          </p>
+          <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
+            يسعدنا سماعك
+          </h1>
+          <p className="mt-3 text-gray-500 dark:text-gray-400">
+            تحدث مع فريقنا الودود.
+          </p>
+
           </div>
 
           <img
@@ -143,12 +148,13 @@ const Home = () => {
                 </svg>
               </span>
               <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
-                Chat to sales
+                تحدث مع فريق المبيعات
               </h2>
               <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                Speak to our friendly team.
+                تواصل مع فريقنا الودود.
               </p>
-              <p className="mt-2 text-sm text-[#5f2476] ">hello@merakiui.com</p>
+              <p className="mt-2 text-sm text-[#5f2476]">hello@merakiui.com</p>
+
             </div>
 
             <div className="p-4 rounded-lg bg-black md:p-6 ">
@@ -174,14 +180,15 @@ const Home = () => {
                 </svg>
               </span>
               <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
-                Visit us
+                زرنا
               </h2>
               <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                Visit our office HQ.
+                قم بزيارة مقر شركتنا الرئيسي.
               </p>
               <p className="mt-2 text-sm text-[#5f2476]">
-                100 Smith Street Collingwood VIC 3066 AU
+                100 Smith Street, Collingwood, VIC 3066, أستراليا
               </p>
+
             </div>
 
             <div className="p-4 rounded-lg bg-black md:p-6 ">
@@ -202,12 +209,13 @@ const Home = () => {
                 </svg>
               </span>
               <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
-                Call us
+                اتصل بنا
               </h2>
               <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                Mon-Fri from 8am to 5pm.
+                من الإثنين إلى الجمعة، من الساعة 8 صباحًا حتى 5 مساءً.
               </p>
               <p className="mt-2 text-sm text-[#5f2476]">+1 (555) 000-0000</p>
+
             </div>
           </div>
         </div>
@@ -216,8 +224,7 @@ const Home = () => {
       <section>
         <div className="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
           <h2 className="mb-8 lg:mb-16 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 dark:text-white md:text-4xl">
-            You’ll be in good company
-          </h2>
+          ستكون في رفقة مميزة </h2>
           <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
             <a href="#" className="flex justify-center items-center">
               <svg
