@@ -48,9 +48,9 @@ const Register = () => {
   
   
   return (
-    <section className="page-login-container pl-[10rem] flex flex-wrap">
-      <div className="mr-[4rem] mt-[5rem]">
-        <h1 className="text-2xl font-semibold mb-4">Register</h1>
+    <section className="page-login-container pr-[10rem] flex flex-wrap">
+      <div className="ml-[4rem] mt-[5rem]">
+        <h1 className="text-2xl font-semibold mb-4">حساب جديد</h1>
 
         <form onSubmit={submitHandler} className="container w-[40rem] class-page-login-reg">
           <div className="my-[2rem]">
@@ -58,13 +58,13 @@ const Register = () => {
               htmlFor="name"
               className="block text-sm font-medium text-white"
             >
-              Name
+              الأسم
             </label>
             <input
               type="text"
               id="name"
               className="mt-1 p-2 border rounded w-full"
-              placeholder="Enter name"
+              placeholder="ادخم أسمك"
               value={username}
               onChange={(e) => setName(e.target.value)}
             />
@@ -75,13 +75,13 @@ const Register = () => {
               htmlFor="email"
               className="block text-sm font-medium text-white"
             >
-              Email Address
+              البريد الالكترونى
             </label>
             <input
               type="email"
               id="email"
               className="mt-1 p-2 border rounded w-full"
-              placeholder="Enter email"
+              placeholder="ادخل البريد الالكترونى"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -92,13 +92,13 @@ const Register = () => {
               htmlFor="password"
               className="block text-sm font-medium text-white"
             >
-              Password
+              كلمة السر
             </label>
             <input
               type="password"
               id="password"
               className="mt-1 p-2 border rounded w-full"
-              placeholder="Enter password"
+              placeholder="ادخل كلمة السر"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -109,13 +109,13 @@ const Register = () => {
               htmlFor="confirmPassword"
               className="block text-sm font-medium text-white"
             >
-              Confirm Password
+              تأكيد كلمة السر
             </label>
             <input
               type="password"
               id="confirmPassword"
               className="mt-1 p-2 border rounded w-full"
-              placeholder="Confirm password"
+              placeholder="اعد كتابة كلمة السر"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
@@ -126,7 +126,7 @@ const Register = () => {
             type="submit"
             className="bg-[#5f2476] text-white px-4 py-2 rounded cursor-pointer my-[1rem]"
           >
-            {isLoading ? "Registering..." : "Register"}
+            {isLoading ? "حساب جديد..." : "تسديل حساب جديد"}
           </button>
 
           {isLoading && <Loader />}
@@ -134,12 +134,12 @@ const Register = () => {
 
         <div className="mt-4">
           <p className="text-white">
-            Already have an account?{" "}
+            هل لديك حساب بالفعل ?{" "}
             <Link
               to={redirect ? `/login?redirect=${redirect}` : "/login"}
               className="text-[#5f2476] hover:underline"
             >
-              Login
+              تسجيل الدخول
             </Link>
           </p>
         </div>
