@@ -52,16 +52,17 @@
     width: 100%;
   }
   
-   .navigation-container-menu a {
-    flex-direction: column;
-  }
-
-  .navigation-container-menu svg {
-    margin-left: 0 ;
-    margin-top: 2px;
+  .nav-item-name {
+    display: none;
+    transition: opacity 0.2s ease-in-out; 
+    
   }
   
-
+  #navigation-container:hover .nav-item-name {
+    display: none;
+    opacity: 1;
+    
+  }
   
   .search-input {
     display: none;
