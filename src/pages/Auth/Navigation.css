@@ -52,7 +52,7 @@
     width: 100%;
   }
   
-  .nav-item-name {
+/*   .nav-item-name {
     display: none;
     transition: opacity 0.2s ease-in-out; 
     
@@ -62,7 +62,7 @@
     display: none;
     opacity: 1;
     
-  }
+  } */
   
   .search-input {
     display: none;
