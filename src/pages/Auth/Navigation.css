@@ -58,7 +58,7 @@ font-size: 10px;
   }
   
   #navigation-container:hover .nav-item-name {
-    /* display: none; */
+    display: none;
     opacity: 1;
     
   }
