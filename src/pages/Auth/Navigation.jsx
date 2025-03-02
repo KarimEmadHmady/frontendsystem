@@ -243,7 +243,7 @@ import {
   AiOutlineUserAdd,
   AiOutlineShoppingCart,
 } from "react-icons/ai";
-import { AiOutlinePlusCircle  } from "react-icons/fa";
+import { FaPlusCircle } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Navigation.css";
@@ -327,7 +327,7 @@ const Navigation = () => {
 
         <Link to="/addserialNumber" className="flex relative">
           <div className="flex justify-center items-center transition-transform transform hover:translate-x-2">
-            <AiOutlinePlusCircle  className="mt-[3rem] ml-2" size={20} />
+            <FaPlusCircle  className="mt-[3rem] ml-2" size={20} />
             <span className=" nav-item-name mt-[3rem]">إضافة منتج</span>  {/* hidden */}
             {/* <FavoritesCount /> */}
           </div>
