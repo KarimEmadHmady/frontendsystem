@@ -140,10 +140,10 @@ textarea {
     padding: 10px;
     margin: 0;
   }
-  .page-product-propertes-one {
-    margin-left: 45px;
-    width: 185px !important;
-  }
+   .page-product-propertes-one {
+
+    flex-direction: column;
+  } 
  #rating , #comment {
   width:100% ; 
  }

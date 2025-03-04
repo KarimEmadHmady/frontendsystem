@@ -68,7 +68,7 @@ const ProductDetails = () => {
               <HeartIcon product={product} />
             </div>
 
-            <div className="flex flex-col page-ltr gap-[13px] self-end ">
+            <div className="flex flex-col page-ltr gap-[13px]  ">
               <h2 className="text-2xl font-semibold">{product.name}</h2>
               <p className="my-4  text-[#B0B0B0]">
                   Serial Number:   {product.serialnumber} 
@@ -77,7 +77,7 @@ const ProductDetails = () => {
 
               <p className="text-5xl my-4 font-extrabold">L.E {product.price}</p>
 
-              <div className="page-product-propertes flex items-center justify-between w-[20rem]">
+              <div className="page-product-propertes flex  w-[20rem]">
                 <div className="page-product-propertes-one one">
                   <h1 className="flex items-center mb-6 ">
                     <FaStore className="mr-2 text-white" /> Brand:{" "}
