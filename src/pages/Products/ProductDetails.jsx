@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import { toast } from "react-toastify";
 import {
   useGetProductDetailsQuery,
-  // useCreateReviewMutation,
 } from "../../redux/api/productApiSlice";
 import Loader from "../../components/Loader";
 import Message from "../../components/Message";
@@ -12,13 +10,11 @@ import {
   FaBox,
   FaClock,
   FaShoppingCart,
-  // FaStar,
   FaStore,
 } from "react-icons/fa";
 import moment from "moment";
 import HeartIcon from "./HeartIcon";
-// import Ratings from "./Ratings";
-// import ProductTabs from "./ProductTabs";
+
 import { addToCart } from "../../redux/features/cart/cartSlice";
 
 const ProductDetails = () => {
@@ -27,36 +23,15 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
 
   const [qty, setQty] = useState(1);
-  // const [rating, setRating] = useState(0);
-  // const [comment, setComment] = useState("");
 
   const {
     data: product,
     isLoading,
-    // refetch,
     error,
   } = useGetProductDetailsQuery(productId);
 
   const { userInfo } = useSelector((state) => state.auth);
 
-  // const [createReview, { isLoading: loadingProductReview }] =
-  //   useCreateReviewMutation();
-
-  // const submitHandler = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     await createReview({
-  //       productId,
-  //       // rating,
-  //       comment,
-  //     }).unwrap();
-  //     refetch();
-  //     toast.success("Review created successfully");
-  //   } catch (error) {
-  //     toast.error(error?.data || error.message);
-  //   }
-  // };
 
   const addToCartHandler = () => {
     dispatch(addToCart({ ...product, qty }));
@@ -93,10 +68,10 @@ const ProductDetails = () => {
               <HeartIcon product={product} />
             </div>
 
-            <div className="flex flex-col justify-between">
+            <div className="flex flex-col ">
               <h2 className="text-2xl font-semibold">{product.name}</h2>
               <p className="my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
-  Serial Number:   {product.serialnumber} 
+                  Serial Number:   {product.serialnumber} 
               </p>
 
 
@@ -104,24 +79,17 @@ const ProductDetails = () => {
 
               <div className="page-product-propertes flex items-center justify-between w-[20rem]">
                 <div className="page-product-propertes-one one">
-                  <h1 className="flex items-center mb-6">
+                  <h1 className="flex items-center mb-6 mr-[15px]">
                     <FaStore className="mr-2 text-white" /> Brand:{" "}
                     {product.brand}
                   </h1>
-                  <h1 className="flex items-center mb-6 w-[20rem]">
+                  <h1 className="flex items-center mb-6 w-[20rem] mr-[15px]">
                     <FaClock className="mr-2 text-white" /> Added:{" "}
                     {moment(product.createdAt).format("YYYY-MM-DD HH:mm:ss")}
                   </h1>
-                  {/* <h1 className="flex items-center mb-6">
-                    <FaStar className="mr-2 text-white" /> Reviews:{" "}
-                    {product.numReviews}
-                  </h1> */}
                 </div>
 
                 <div className="two">
-                  {/* <h1 className="flex items-center mb-6">
-                    <FaStar className="mr-2 text-white" /> Ratings: {rating}
-                  </h1> */}
                   <h1 className="flex items-center mb-6">
                     <FaShoppingCart className="mr-2 text-white" /> Quantity:{" "}
                     {product.quantity}
@@ -134,10 +102,6 @@ const ProductDetails = () => {
               </div>
 
               <div className="flex justify-between flex-wrap">
-                {/* <Ratings
-                  value={product.rating}
-                  text={`${product.numReviews} reviews`}
-                /> */}
 
                 {product.countInStock > 0 && (
                   <div>
@@ -166,19 +130,6 @@ const ProductDetails = () => {
                 </button>
               </div>
             </div>
-
-            {/* <div className="page-single-products mt-[5rem] container flex flex-wrap items-start justify-between ml-[10rem]">
-              <ProductTabs
-                loadingProductReview={loadingProductReview}
-                userInfo={userInfo}
-                submitHandler={submitHandler}
-                // rating={rating}
-                // setRating={setRating}
-                comment={comment}
-                setComment={setComment}
-                product={product}
-              />
-            </div> */}
           </div>
         </>
       )}
