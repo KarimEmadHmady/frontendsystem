@@ -12,7 +12,7 @@ import {
   FaBox,
   FaClock,
   FaShoppingCart,
-  FaStar,
+  // FaStar,
   FaStore,
 } from "react-icons/fa";
 import moment from "moment";
@@ -112,10 +112,10 @@ const ProductDetails = () => {
                     <FaClock className="mr-2 text-white" /> Added:{" "}
                     {moment(product.createdAt).format("YYYY-MM-DD HH:mm:ss")}
                   </h1>
-                  <h1 className="flex items-center mb-6">
+                  {/* <h1 className="flex items-center mb-6">
                     <FaStar className="mr-2 text-white" /> Reviews:{" "}
                     {product.numReviews}
-                  </h1>
+                  </h1> */}
                 </div>
 
                 <div className="two">
