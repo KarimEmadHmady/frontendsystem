@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import {
   useGetProductDetailsQuery,
-  useCreateReviewMutation,
+  // useCreateReviewMutation,
 } from "../../redux/api/productApiSlice";
 import Loader from "../../components/Loader";
 import Message from "../../components/Message";
@@ -28,35 +28,35 @@ const ProductDetails = () => {
 
   const [qty, setQty] = useState(1);
   // const [rating, setRating] = useState(0);
-  const [comment, setComment] = useState("");
+  // const [comment, setComment] = useState("");
 
   const {
     data: product,
     isLoading,
-    refetch,
+    // refetch,
     error,
   } = useGetProductDetailsQuery(productId);
 
   const { userInfo } = useSelector((state) => state.auth);
 
-  const [createReview, { isLoading: loadingProductReview }] =
-    useCreateReviewMutation();
+  // const [createReview, { isLoading: loadingProductReview }] =
+  //   useCreateReviewMutation();
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
+  // const submitHandler = async (e) => {
+  //   e.preventDefault();
 
-    try {
-      await createReview({
-        productId,
-        // rating,
-        comment,
-      }).unwrap();
-      refetch();
-      toast.success("Review created successfully");
-    } catch (error) {
-      toast.error(error?.data || error.message);
-    }
-  };
+  //   try {
+  //     await createReview({
+  //       productId,
+  //       // rating,
+  //       comment,
+  //     }).unwrap();
+  //     refetch();
+  //     toast.success("Review created successfully");
+  //   } catch (error) {
+  //     toast.error(error?.data || error.message);
+  //   }
+  // };
 
   const addToCartHandler = () => {
     dispatch(addToCart({ ...product, qty }));
