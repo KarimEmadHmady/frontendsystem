@@ -18,7 +18,7 @@ import {
 import moment from "moment";
 import HeartIcon from "./HeartIcon";
 // import Ratings from "./Ratings";
-import ProductTabs from "./ProductTabs";
+// import ProductTabs from "./ProductTabs";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 
 const ProductDetails = () => {
@@ -167,7 +167,7 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            <div className="page-single-products mt-[5rem] container flex flex-wrap items-start justify-between ml-[10rem]">
+            {/* <div className="page-single-products mt-[5rem] container flex flex-wrap items-start justify-between ml-[10rem]">
               <ProductTabs
                 loadingProductReview={loadingProductReview}
                 userInfo={userInfo}
@@ -178,7 +178,7 @@ const ProductDetails = () => {
                 setComment={setComment}
                 product={product}
               />
-            </div>
+            </div> */}
           </div>
         </>
       )}
