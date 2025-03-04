@@ -68,7 +68,7 @@ const ProductDetails = () => {
               <HeartIcon product={product} />
             </div>
 
-            <div className="flex flex-col ">
+            <div className="flex flex-col page-ltr ">
               <h2 className="text-2xl font-semibold">{product.name}</h2>
               <p className="my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
                   Serial Number:   {product.serialnumber} 
@@ -79,11 +79,11 @@ const ProductDetails = () => {
 
               <div className="page-product-propertes flex items-center justify-between w-[20rem]">
                 <div className="page-product-propertes-one one">
-                  <h1 className="flex items-center mb-6 mr-[15px]">
+                  <h1 className="flex items-center mb-6 ">
                     <FaStore className="mr-2 text-white" /> Brand:{" "}
                     {product.brand}
                   </h1>
-                  <h1 className="flex items-center mb-6 w-[20rem] mr-[15px]">
+                  <h1 className="flex items-center mb-6 w-[20rem]">
                     <FaClock className="mr-2 text-white" /> Added:{" "}
                     {moment(product.createdAt).format("YYYY-MM-DD HH:mm:ss")}
                   </h1>
