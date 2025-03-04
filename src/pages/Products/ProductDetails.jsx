@@ -64,7 +64,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <>
+    <div className="page-ltr">
       <div>
         <Link
           to="/"
@@ -182,7 +182,7 @@ const ProductDetails = () => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 
