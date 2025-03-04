@@ -43,7 +43,7 @@ const ProductDetails = () => {
       <div>
         <Link
           to="/shop"
-          className="text-white font-semibold hover:underline ml-[10rem]"
+          className="text-white font-semibold hover:underline ml-[10rem] text-center"
         >
           جميع المنتجات 
         </Link>
