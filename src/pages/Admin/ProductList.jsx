@@ -75,7 +75,7 @@ const ProductList = () => {
 
 
   return (
-    <div className="container xl:mx-[9rem] sm:mx-[0] contproductlist-page page-ltr">
+    <div className="container xl:mx-[9rem] sm:mx-[0] contproductlist-page page-ltr margine-btn-phone">
       <div className="flex flex-col md:flex-row">
         <AdminMenu />
         <div className="md:w-3/4 p-3">

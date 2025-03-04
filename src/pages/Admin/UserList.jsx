@@ -57,7 +57,7 @@ const UserList = () => {
   };
 
   return (
-    <div className="p-4 page-ltr">
+    <div className="p-4 page-ltr margine-btn-phone">
       <AdminMenu />
       <h1 className="text-2xl font-semibold mb-4 text-center">Users</h1>
       {isLoading ? (

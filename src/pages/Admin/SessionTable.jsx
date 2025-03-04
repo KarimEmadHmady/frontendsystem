@@ -58,9 +58,9 @@ const SessionTable = () => {
   }, []);
 
   return (
-    <div className="p-4 p-[120px] page-Sessiontable page-ltr">
+    <div className="p-4 p-[120px] page-Sessiontable page-ltr margine-btn-phone">
       <AdminMenu />
-      <h2 className="text-xl font-bold mb-4">سجلات التسجيل</h2>
+      <h2 className="text-xl font-bold mb-4 text-center">سجلات التسجيل</h2>
 
       {isLoading ? ( 
         <p className="text-center text-lg font-bold">Loading ...</p>

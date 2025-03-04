@@ -39,7 +39,7 @@ const Shop = () => {
   if (error) return <p className="text-red-500 text-center">{error}</p>;
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto margine-btn-phone">
       <div className="p-3 container-products-shoppage">
         <h2 className="h4 text-center mb-2">
           {products?.length} منتجات
