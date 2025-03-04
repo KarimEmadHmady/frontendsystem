@@ -17,7 +17,7 @@ import {
 } from "react-icons/fa";
 import moment from "moment";
 import HeartIcon from "./HeartIcon";
-import Ratings from "./Ratings";
+// import Ratings from "./Ratings";
 import ProductTabs from "./ProductTabs";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 
@@ -27,7 +27,7 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
 
   const [qty, setQty] = useState(1);
-  const [rating, setRating] = useState(0);
+  // const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
 
   const {
@@ -48,7 +48,7 @@ const ProductDetails = () => {
     try {
       await createReview({
         productId,
-        rating,
+        // rating,
         comment,
       }).unwrap();
       refetch();
@@ -119,9 +119,9 @@ const ProductDetails = () => {
                 </div>
 
                 <div className="two">
-                  <h1 className="flex items-center mb-6">
+                  {/* <h1 className="flex items-center mb-6">
                     <FaStar className="mr-2 text-white" /> Ratings: {rating}
-                  </h1>
+                  </h1> */}
                   <h1 className="flex items-center mb-6">
                     <FaShoppingCart className="mr-2 text-white" /> Quantity:{" "}
                     {product.quantity}
@@ -134,10 +134,10 @@ const ProductDetails = () => {
               </div>
 
               <div className="flex justify-between flex-wrap">
-                <Ratings
+                {/* <Ratings
                   value={product.rating}
                   text={`${product.numReviews} reviews`}
-                />
+                /> */}
 
                 {product.countInStock > 0 && (
                   <div>
@@ -172,8 +172,8 @@ const ProductDetails = () => {
                 loadingProductReview={loadingProductReview}
                 userInfo={userInfo}
                 submitHandler={submitHandler}
-                rating={rating}
-                setRating={setRating}
+                // rating={rating}
+                // setRating={setRating}
                 comment={comment}
                 setComment={setComment}
                 product={product}
