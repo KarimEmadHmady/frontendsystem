@@ -46,7 +46,7 @@ const ProductCard = ({ p }) => {
         </div>
 
         <p className="mb-3 font-normal text-[#CFCFCF]">
-  Serial Number: {p?.serialnumber}..
+  سيريال: {p?.serialnumber}..
 </p>
 
         <section className="flex justify-between items-center">
@@ -54,7 +54,7 @@ const ProductCard = ({ p }) => {
             to={`/product/${p._id}`}
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#5f2476] rounded-lg hover:bg-[#5f2476] focus:ring-4 focus:outline-none focus:ring-[#5f2476] dark:bg-[#5f2476] dark:hover:bg-[#5f2476] dark:focus:ring-[#5f2476]"
           >
-            Read More
+            المزيد
             <svg
               className="w-3.5 h-3.5 ml-2"
               aria-hidden="true"
