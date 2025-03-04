@@ -77,7 +77,7 @@ const Navigation = () => {
             <span className=" nav-item-name mt-[3rem]">السلة</span>  
           </div>
 
-          <div className="absolute top-9">
+          <div className="absolute top-9 cart-phone-counter">
             {cartItems.length > 0 && (
               <span>
                 <span className="px-1 py-0 text-sm text-white bg-[#5f2476] rounded-full">

@@ -229,6 +229,10 @@ table {
 .margine-btn-phone {
   margin-bottom: 150px;
 }
+.cart-phone-counter {
+  right: -9px;
+  top: -6px;
+}
 }
 
 
