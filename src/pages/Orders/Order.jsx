@@ -75,7 +75,7 @@ const Order = () => {
         </div>
       </div>
 
-      <div className="md:w-1/3 page-rtl">
+      <div className=" page-rtl page-order-info">
         <div className="mt-5 border-gray-300 pb-4 mb-4">
           <h2 className="text-xl font-bold mb-2">معلومات الطلب</h2>
           <p className="mb-4 mt-4">
