@@ -42,10 +42,10 @@ const ProductDetails = () => {
     <div className="page-ltr">
       <div>
         <Link
-          to="/"
+          to="/shop"
           className="text-white font-semibold hover:underline ml-[10rem]"
         >
-          Go Back
+          جميع المنتجات 
         </Link>
       </div>
 
@@ -71,7 +71,7 @@ const ProductDetails = () => {
             <div className="flex flex-col page-rtl gap-[13px]  ">
               <h2 className="text-2xl font-semibold">{product.name}</h2>
               <p className="my-4  text-[#B0B0B0]">
-                  Serial Number:   {product.serialnumber} 
+                  رقم السيريال:   {product.serialnumber} 
               </p>
 
 
@@ -80,22 +80,22 @@ const ProductDetails = () => {
               <div className="page-product-propertes flex  w-[20rem]">
                 <div className="page-product-propertes-one one">
                   <h1 className="flex items-center mb-6 ">
-                    <FaStore className="mr-2 text-white" /> Brand:{" "}
+                    <FaStore className="mr-2 text-white" /> البراند:{" "}
                     {product.brand}
                   </h1>
                   <h1 className="flex items-center mb-6 w-[20rem]">
-                    <FaClock className="mr-2 text-white" /> Added:{" "}
+                    <FaClock className="mr-2 text-white" /> موعد اضافة المنتج:{" "}
                     {moment(product.createdAt).format("YYYY-MM-DD HH:mm:ss")}
                   </h1>
                 </div>
 
                 <div className="two">
                   <h1 className="flex items-center mb-6">
-                    <FaShoppingCart className="mr-2 text-white" /> Quantity:{" "}
+                    <FaShoppingCart className="mr-2 text-white" /> الكمية:{" "}
                     {product.quantity}
                   </h1>
                   <h1 className="flex items-center mb-6 w-[10rem]">
-                    <FaBox className="mr-2 text-white" /> In Stock:{" "}
+                    <FaBox className="mr-2 text-white" /> فى المخزن:{" "}
                     {product.countInStock}
                   </h1>
                 </div>
@@ -126,7 +126,7 @@ const ProductDetails = () => {
                   disabled={product.countInStock === 0}
                   className="bg-[#5f2476] text-white py-2 px-4 rounded-lg mt-4 md:mt-0"
                 >
-                  Add To Cart
+                  عمل طلب
                 </button>
               </div>
             </div>
