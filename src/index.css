@@ -309,14 +309,14 @@ table {
     position: relative;
     z-index: 99;
     position: absolute;
-     left: -267px; 
+     /* left: -267px;  */
     transition: 0.8s;
   }
 
   .containar-filter {
     position: absolute;
-    left: 20px;
-    top: 15px;
+    /* left: 20px;
+    top: 15px; */
     display: block;
     display: flex;
     flex-direction: row-reverse;
