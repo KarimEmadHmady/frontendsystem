@@ -68,7 +68,7 @@ const ProductDetails = () => {
               <HeartIcon product={product} />
             </div>
 
-            <div className="flex flex-col page-ltr gap-[13px]  ">
+            <div className="flex flex-col page-rtl gap-[13px]  ">
               <h2 className="text-2xl font-semibold">{product.name}</h2>
               <p className="my-4  text-[#B0B0B0]">
                   Serial Number:   {product.serialnumber} 

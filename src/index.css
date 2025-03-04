@@ -322,3 +322,7 @@ table {
 .page-ltr {
   direction: ltr !important;
 }
+
+.page-rtl{
+  direction: rtl !important;
+}
