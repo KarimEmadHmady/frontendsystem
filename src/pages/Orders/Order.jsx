@@ -14,7 +14,7 @@ const Order = () => {
       try {
         await deleteOrder(orderId).unwrap();
         alert("تم حذف الطلب بنجاح!");
-        window.location.href = "/orders"; // إعادة التوجيه بعد الحذف
+        window.location.href = "/admin/orderlist"; 
       } catch (err) {
         alert("حدث خطأ أثناء الحذف!");
       }
@@ -76,6 +76,16 @@ const Order = () => {
                       </td>
                     </tr>
                   ))}
+                          <div>
+      <button
+        onClick={handleDelete}
+        className="bg-red-500 text-white px-4 py-2 rounded"
+        disabled={isDeleting}
+      >
+        {isDeleting ? "جارِ الحذف..." : "حذف الطلب"}
+      </button>
+      
+      </div>
                 </tbody>
               </table>
             </div>
@@ -133,9 +143,7 @@ const Order = () => {
           <span>اجمالى السعر </span>
           <span>L.E {order.itemsPrice}</span>
         </div>
-      </div>
-      <div>
-      <h2>تفاصيل الطلب</h2>
+        <div>
       <button
         onClick={handleDelete}
         className="bg-red-500 text-white px-4 py-2 rounded"
@@ -143,8 +151,10 @@ const Order = () => {
       >
         {isDeleting ? "جارِ الحذف..." : "حذف الطلب"}
       </button>
-      {/* بقية الكود */}
-    </div>
+      
+      </div>
+      </div>
+
     </div>
   );
 };
