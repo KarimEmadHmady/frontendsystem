@@ -168,18 +168,14 @@ const Adminproducts = () => {
           </CSVLink>
           </div>
 
-        {/* محتوى المنتجات */}
-        <div className="p-3 container-products-shoppage">
+       
+        <div className="p-3 container-products-shoppage page-rtl">
           <h2 className={`h4 text-center mb-2 ${isFilterOpen ? "opacity-5" : "opacity-100"}`}>{products?.length} Products</h2> 
           <div className={`flex flex-wrap justify-center ${isFilterOpen ? "opacity-5" : "opacity-100"}`}>
             {products.length === 0 ? (
               <Loader className="text-center" />
             ) : (
               <>
-                {/* زر تحميل المنتجات كـ CSV */}
-
-
-                {/* عرض المنتجات */}
                 {products?.map((p) => (
                   <div className="p-3" key={p._id}>
                     <ProductCard p={p} />
