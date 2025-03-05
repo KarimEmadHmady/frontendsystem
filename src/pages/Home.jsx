@@ -104,39 +104,6 @@ const Home = () => {
 
             </div>
 
-{/*             <div className="p-4 rounded-lg bg-black md:p-6 ">
-              <span className="inline-block p-3  rounded-lg bg-[#5f2476]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-5 h-5 text-[#fff]"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                  />
-                </svg>
-              </span>
-              <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
-                زرنا
-              </h2>
-              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                قم بزيارة مقر شركتنا الرئيسي.
-              </p>
-              <p className="mt-2 text-sm text-[#5f2476]">
-                100 Smith Street, Collingwood, VIC 3066, أستراليا
-              </p>
-
-            </div> */}
 
             <div className="p-4 rounded-lg bg-black md:p-6 ">
               <span className="inline-block p-3  rounded-lg bg-[#5f2476]">
@@ -172,6 +139,7 @@ const Home = () => {
         <div className="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">
           <h2 className="mb-8 lg:mb-16 text-3xl font-extrabold tracking-tight leading-tight text-center text-gray-900 dark:text-white md:text-4xl">
           ستكون في رفقة مميزة </h2>
+          <img src="/imageicone.png" alt="" />
         </div>
       </section>
     </>
