@@ -1,32 +1,28 @@
 import Message from "../../components/Message";
 import Loader from "../../components/Loader";
 import { Link } from "react-router-dom";
-import { useGetOrdersQuery } from "../../redux/api/orderApiSlice";
+import { useGetOrdersQuery  , useDeleteAllOrdersMutation } from "../../redux/api/orderApiSlice";
 import AdminMenu from "./AdminMenu";
 import { CSVLink } from "react-csv";
-import axios from "axios";
-import BASE_URL from "../../redux/constants";
+
 
 const OrderList = () => {
   const { data: orders, isLoading, error } = useGetOrdersQuery();
   console.log(orders);
-
-  const deleteAllOrders = async () => {
-    try {
-      const token = localStorage.getItem("token"); // اجلب التوكن لو عندك نظام مصادقة
-      const response = await axios.delete(`${BASE_URL}/api/orders`, {
-        headers: {
-          Authorization: `Bearer ${token}`, // أرسل التوكن مع الطلب
-        },
-      });
-
-      alert(response.data.message); // عرض رسالة نجاح
-    } catch (error) {
-      console.error("🔴 خطأ أثناء حذف الطلبات:", error);
-      alert("حدث خطأ أثناء حذف الطلبات.");
+  const [deleteAllOrders] = useDeleteAllOrdersMutation();
+  const handleDeleteAllOrders = async () => {
+    if (window.confirm("⚠️ هل أنت متأكد من حذف جميع الطلبات؟")) {
+      try {
+        await deleteAllOrders().unwrap();
+        alert("✅ تم حذف جميع الطلبات بنجاح!");
+        window.location.href = "/admin/orderlist"; // إعادة التوجيه بعد الحذف
+      } catch (err) {
+        alert("❌ حدث خطأ أثناء حذف الطلبات!");
+      }
     }
   };
 
+  
   return (
     <>
       {isLoading ? (
@@ -119,7 +115,7 @@ const OrderList = () => {
 
           <div className="flex justify-center items-center mt-[50px] ">
             <button
-              onClick={deleteAllOrders}
+              onClick={handleDeleteAllOrders}
               className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300"
             >
               🗑️ حذف جميع الطلبات
