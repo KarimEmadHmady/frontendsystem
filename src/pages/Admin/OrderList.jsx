@@ -4,10 +4,28 @@ import { Link } from "react-router-dom";
 import { useGetOrdersQuery } from "../../redux/api/orderApiSlice";
 import AdminMenu from "./AdminMenu";
 import { CSVLink } from "react-csv";
+import axios from "axios";
+import BASE_URL from "../../redux/constants";
 
 const OrderList = () => {
   const { data: orders, isLoading, error } = useGetOrdersQuery();
   console.log(orders);
+
+  const deleteAllOrders = async () => {
+    try {
+      const token = localStorage.getItem("token"); // اجلب التوكن لو عندك نظام مصادقة
+      const response = await axios.delete(`${BASE_URL}/api/orders`, {
+        headers: {
+          Authorization: `Bearer ${token}`, // أرسل التوكن مع الطلب
+        },
+      });
+
+      alert(response.data.message); // عرض رسالة نجاح
+    } catch (error) {
+      console.error("🔴 خطأ أثناء حذف الطلبات:", error);
+      alert("حدث خطأ أثناء حذف الطلبات.");
+    }
+  };
 
   return (
     <>
@@ -98,6 +116,15 @@ const OrderList = () => {
               ))}
             </tbody>
           </table>
+
+          <div className="flex justify-center items-center min-h-screen">
+            <button
+              onClick={deleteAllOrders}
+              className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300"
+            >
+              🗑️ حذف جميع الطلبات
+            </button>
+          </div>
         </div>
       )}
     </>
