@@ -1,10 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 import Message from "../../components/Message";
 import Loader from "../../components/Loader";
-import { useGetOrderDetailsQuery} from "../../redux/api/orderApiSlice";
+import { useGetOrderDetailsQuery , useDeleteOrderMutation } from "../../redux/api/orderApiSlice";
 
 const Order = () => {
   const { id: orderId } = useParams();
+  const { data: order, refetch, isLoading, error } = useGetOrderDetailsQuery(orderId);
+  const [deleteOrder, { isLoading: isDeleting }] = useDeleteOrderMutation();
 
   const {
     data: order,
@@ -12,6 +14,18 @@ const Order = () => {
     isLoading,
     error,
   } = useGetOrderDetailsQuery(orderId);
+
+  const handleDelete = async () => {
+    if (window.confirm("هل أنت متأكد من حذف الطلب؟")) {
+      try {
+        await deleteOrder(orderId).unwrap();
+        alert("تم حذف الطلب بنجاح!");
+        window.location.href = "/orders"; // إعادة التوجيه بعد الحذف
+      } catch (err) {
+        alert("حدث خطأ أثناء الحذف!");
+      }
+    }
+  };
 
   if (isLoading) return <Loader />;
   if (error) return <Message variant="danger">{error.data.message}</Message>;
@@ -126,6 +140,17 @@ const Order = () => {
           <span>L.E {order.itemsPrice}</span>
         </div>
       </div>
+      <div>
+      <h2>تفاصيل الطلب</h2>
+      <button
+        onClick={handleDelete}
+        className="bg-red-500 text-white px-4 py-2 rounded"
+        disabled={isDeleting}
+      >
+        {isDeleting ? "جارِ الحذف..." : "حذف الطلب"}
+      </button>
+      {/* بقية الكود */}
+    </div>
     </div>
   );
 };
