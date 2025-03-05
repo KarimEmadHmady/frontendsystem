@@ -71,11 +71,11 @@ const Home = () => {
 
           <img
             className="object-cover w-full h-64 mt-10 rounded-lg lg:h-96"
-            src="https://www.cyfe.com/wp-content/uploads/2020/04/GA-dash-v2-1024x539.jpg"
+            src="https://cdn.sanity.io/images/z7wg6mcy/production/67b53593e8c1c8bc728deab50137b6180cc04e0c-2448x1658.png?fm=png&q=100&fit=max&auto=format"
             alt="img"
           />
 
-          <div className=" div-section-contact grid grid-cols-1 gap-12 mt-10 lg:grid-cols-3 sm:grid-cols-2">
+          <div className=" div-section-contact grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2 sm:grid-cols-2">
             <div className="p-4 rounded-lg bg-black">
               <span className="inline-block p-3  rounded-lg bg-[#5f2476]">
                 <svg
