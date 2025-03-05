@@ -100,7 +100,7 @@ const Home = () => {
               <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
                 تواصل مع فريقنا الودود.
               </p>
-              <p className="mt-2 text-sm text-[#5f2476]">hello@merakiui.com</p>
+              <p className="mt-2 text-sm text-[#5f2476]">info@TurboTech.com</p>
 
             </div>
 
@@ -161,7 +161,7 @@ const Home = () => {
               <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
                 من الإثنين إلى الجمعة، من الساعة 8 صباحًا حتى 5 مساءً.
               </p>
-              <p className="mt-2 text-sm text-[#5f2476]">+1 (555) 000-0000</p>
+              <p className="mt-2 text-sm text-[#5f2476]">+201155993133</p>
 
             </div>
           </div>
