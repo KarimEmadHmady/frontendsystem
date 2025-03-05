@@ -25,7 +25,7 @@ const Order = () => {
   if (error) return <Message variant="danger">{error.data.message}</Message>;
 
   return (
-    <div className="page-info-order container flex flex-col ml-[10rem] md:flex-row page-ltr">
+    <div className="page-info-order container flex flex-col ml-[10rem] md:flex-row page-ltr margine-btn-phone">
       <div className="md:w-2/3 pr-4">
         <div className="border gray-300 mt-5 pb-4 mb-5">
           {order.orderItems.length === 0 ? (
@@ -76,16 +76,6 @@ const Order = () => {
                       </td>
                     </tr>
                   ))}
-                          <div>
-      <button
-        onClick={handleDelete}
-        className="bg-red-500 text-white px-4 py-2 rounded"
-        disabled={isDeleting}
-      >
-        {isDeleting ? "جارِ الحذف..." : "حذف الطلب"}
-      </button>
-      
-      </div>
                 </tbody>
               </table>
             </div>
@@ -143,16 +133,16 @@ const Order = () => {
           <span>اجمالى السعر </span>
           <span>L.E {order.itemsPrice}</span>
         </div>
-        <div>
-      <button
-        onClick={handleDelete}
-        className="bg-red-500 text-white px-4 py-2 rounded"
-        disabled={isDeleting}
-      >
-        {isDeleting ? "جارِ الحذف..." : "حذف الطلب"}
-      </button>
-      
-      </div>
+            <div>
+              <button
+                onClick={handleDelete}
+                className="bg-red-500 text-white px-4 py-2 rounded"
+                disabled={isDeleting}
+              >
+                {isDeleting ? "جارِ الحذف..." : "حذف الطلب"}
+              </button>
+          
+          </div>
       </div>
 
     </div>
