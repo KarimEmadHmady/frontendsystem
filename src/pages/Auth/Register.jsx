@@ -144,8 +144,8 @@ const Register = () => {
         </div>
       </div>
       <img
-        src="../../public/imageicone.png"
-        alt=""
+        src="/imageicone.png"
+        alt="Icon"
         className="h-[65rem] w-[59%] xl:block md:hidden sm:hidden rounded-lg login-page-img"
       />
     </section>
