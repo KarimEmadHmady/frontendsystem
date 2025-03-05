@@ -308,7 +308,7 @@ table {
 
   .list-filter {
     position: relative;
-    z-index: 99;
+    z-index: 39;
     position: absolute;
     transition: 0.8s;
   }
