@@ -144,7 +144,7 @@ const Register = () => {
         </div>
       </div>
       <img
-        src="https://images.unsplash.com/photo-1576502200916-3808e07386a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80"
+        src="../../public/imageicone.png"
         alt=""
         className="h-[65rem] w-[59%] xl:block md:hidden sm:hidden rounded-lg login-page-img"
       />
