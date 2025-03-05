@@ -104,7 +104,7 @@ const Home = () => {
 
             </div>
 
-            <div className="p-4 rounded-lg bg-black md:p-6 ">
+{/*             <div className="p-4 rounded-lg bg-black md:p-6 ">
               <span className="inline-block p-3  rounded-lg bg-[#5f2476]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +136,7 @@ const Home = () => {
                 100 Smith Street, Collingwood, VIC 3066, أستراليا
               </p>
 
-            </div>
+            </div> */}
 
             <div className="p-4 rounded-lg bg-black md:p-6 ">
               <span className="inline-block p-3  rounded-lg bg-[#5f2476]">
