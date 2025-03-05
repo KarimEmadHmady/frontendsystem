@@ -315,8 +315,8 @@ table {
 
   .containar-filter {
     position: absolute;
-    right: -48px;
-    top: 50px; 
+    right: -85px;
+    top: 58px;
     display: block;
     display: flex;
     flex-direction: row-reverse;
