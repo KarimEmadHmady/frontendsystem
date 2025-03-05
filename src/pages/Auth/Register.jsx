@@ -3,7 +3,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../components/Loader";
 import { useRegisterMutation } from "../../redux/api/usersApiSlice";
-// import { setCredentials } from "../../redux/features/auth/authSlice";
 import { toast } from "react-toastify";
 
 const Register = () => {
@@ -33,15 +32,15 @@ const Register = () => {
     e.preventDefault();
   
     if (password !== confirmPassword) {
-      toast.error("Passwords do not match");
+      toast.error("كلمات المرور غير متطابقة");
     } else {
       try {
         await register({ username, email, password }).unwrap();
-        toast.success("User successfully registered");
+        toast.success("تم تسجيل المستخدم بنجاح");
         navigate("/login"); 
       } catch (err) {
         console.log(err);
-        toast.error(err.data.message || "Registration failed");
+        toast.error(err.data.message || "فشل التسجيل");
       }
     }
   };

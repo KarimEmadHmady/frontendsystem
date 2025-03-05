@@ -59,13 +59,13 @@ const AdminProductUpdate = () => {
     formData.append("image", e.target.files[0]);
     try {
       const res = await uploadProductImage(formData).unwrap();
-      toast.success("Item added successfully", {
+      toast.success("تمت إضافة المنتج بنجاح", {
         position: toast.POSITION.TOP_RIGHT,
         autoClose: 2000,
       });
       setImage(res.image);
     } catch (err) {
-      toast.success("Item added successfully", {
+      toast.success("تمت إضافة المنتج بنجاح", {
         position: toast.POSITION.TOP_RIGHT,
         autoClose: 2000,
       });
@@ -94,7 +94,7 @@ const AdminProductUpdate = () => {
           autoClose: 2000,
         });
       } else {
-        toast.success(`Product successfully updated`, {
+        toast.success(`تم اضافة المنتج بنجاح`, {
           position: toast.POSITION.TOP_RIGHT,
           autoClose: 2000,
         });
@@ -102,7 +102,7 @@ const AdminProductUpdate = () => {
       }
     } catch (err) {
       console.log(err);
-      toast.error("Product update failed. Try again.", {
+      toast.error("فشل فى اضافة المنتج. حاول مرة أخرى.", {
         position: toast.POSITION.TOP_RIGHT,
         autoClose: 2000,
       });
@@ -112,7 +112,7 @@ const AdminProductUpdate = () => {
   const handleDelete = async () => {
     try {
       let answer = window.confirm(
-        "Are you sure you want to delete this product?"
+        "هل أنت متأكد أنك تريد حذف هذا المنتج؟?"
       );
       if (!answer) return;
 

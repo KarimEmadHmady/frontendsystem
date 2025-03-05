@@ -26,7 +26,7 @@ const CategoryList = () => {
     e.preventDefault();
 
     if (!name) {
-      toast.error("Category name is required");
+      toast.error("اسم الفئة مطلوب");
       return;
     }
 
@@ -36,11 +36,11 @@ const CategoryList = () => {
         toast.error(result.error);
       } else {
         setName("");
-        toast.success(`${result.name} is created.`);
+        toast.success(`${result.name} تم إنشاءه.`);
       }
     } catch (error) {
       console.error(error);
-      toast.error("Creating category failed, try again.");
+      toast.error("فشل إنشاء الفئة، حاول مرة أخرى.");
     }
   };
 
@@ -48,7 +48,7 @@ const CategoryList = () => {
     e.preventDefault();
 
     if (!updatingName) {
-      toast.error("Category name is required");
+      toast.error("اسم الفئة مطلوب");
       return;
     }
 
@@ -63,7 +63,7 @@ const CategoryList = () => {
       if (result.error) {
         toast.error(result.error);
       } else {
-        toast.success(`${result.name} is updated`);
+        toast.success(`${result.name} تم تحديثه`);
         setSelectedCategory(null);
         setUpdatingName("");
         setModalVisible(false);
@@ -80,13 +80,13 @@ const CategoryList = () => {
       if (result.error) {
         toast.error(result.error);
       } else {
-        toast.success(`${result.name} is deleted.`);
+        toast.success(`${result.name} تمت الحذف.`);
         setSelectedCategory(null);
         setModalVisible(false);
       }
     } catch (error) {
       console.error(error);
-      toast.error("Category delection failed. Tray again.");
+      toast.error("فشل اختيار الفئة. حاول مرة أخرى.");
     }
   };
 

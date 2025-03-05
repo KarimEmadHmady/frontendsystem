@@ -10,7 +10,7 @@ const ProductCard = ({ p }) => {
 
   const addToCartHandler = (product, qty) => {
     dispatch(addToCart({ ...product, qty }));
-    toast.success("Item added successfully", {
+    toast.success("تمت إضافة المنتج بنجاح", {
       position: toast.POSITION.TOP_RIGHT,
       autoClose: 2000,
     });
@@ -46,8 +46,8 @@ const ProductCard = ({ p }) => {
         </div>
 
         <p className="mb-3 font-normal text-[#CFCFCF]">
-  سيريال: {p?.serialnumber}..
-</p>
+          سيريال: {p?.serialnumber}..
+        </p>
 
         <section className="flex justify-between items-center">
           <Link

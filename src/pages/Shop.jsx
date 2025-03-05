@@ -25,7 +25,7 @@ const Shop = () => {
           console.log("📦 المنتجات:", data); 
           dispatch(setProducts(data.products));
           setLoading(false);
-        }, 2000); // تأخير لمدة ثانيتين
+        }, 2000); 
       } catch (err) {
         const errorMessage = err.response?.data?.message || "فشل في جلب المنتجات، ادخل السيريال و اسم البراند من صفحة اضافة منتج.";
         setError(errorMessage);

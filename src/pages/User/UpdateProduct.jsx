@@ -28,7 +28,7 @@ const UpdateProduct = () => {
       );
 
       if (response.status === 200) {
-        toast.success("Brand And product added successfully!");
+        toast.success("تمت إضافة العلامة التجارية والمنتج بنجاح!");
         
         setProducts([...products, { serialNumber, brand }]);
         
@@ -37,7 +37,7 @@ const UpdateProduct = () => {
       }
     } catch (error) {
       console.error("Axios error:", error.response?.data);
-      toast.error(error.response?.data?.message || "Error updating brand!");
+      toast.error(error.response?.data?.message || "خطأ في تحديث العلامة التجارية!");
     } finally {
       setLoading(false);
     }

@@ -28,7 +28,7 @@ const ProductList = () => {
 
     try {
       const productData = new FormData();
-      productData.append("image", imageUrl); // إرسال رابط الصورة بدلاً من الملف
+      productData.append("image", imageUrl);
       productData.append("name", name);
       productData.append("serialnumber", serialnumber);
       productData.append("price", price);
@@ -39,14 +39,14 @@ const ProductList = () => {
       const { data } = await createProduct(productData);
 
       if (data.error) {
-        toast.error("Product create failed. Try Again.");
+        toast.error("فشل إنشاء المنتج. حاول مرة أخرى.");
       } else {
         toast.success(`${data.name} is created`);
         navigate("/");
       }
     } catch (error) {
       console.error(error);
-      toast.error("Product create failed. Try Again.");
+      toast.error("فشل إنشاء المنتج. حاول مرة أخرى.");
     }
   };
 
@@ -58,8 +58,7 @@ const ProductList = () => {
       const res = await uploadProductImage(formData).unwrap();
       toast.success(res.message);
   
-      // استرجاع الرابط المباشر من الرد
-      setImage(res.imageUrl); // استخدم رابط Cloudinary المباشر
+      setImage(res.imageUrl); 
       setImageUrl(res.imageUrl);
     } catch (error) {
       toast.error(error?.data?.message || error.error);

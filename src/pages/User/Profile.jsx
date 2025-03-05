@@ -28,7 +28,7 @@ const Profile = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      toast.error("Passwords do not match");
+      toast.error("كلمات المرور غير متطابقة");
     } else {
       try {
         const res = await updateProfile({
@@ -38,7 +38,7 @@ const Profile = () => {
           password,
         }).unwrap();
         dispatch(setCredentials({ ...res }));
-        toast.success("Profile updated successfully");
+        toast.success("تم تحديث الملف الشخصي بنجاح");
       } catch (err) {
         toast.error(err?.data?.message || err.error);
       }
