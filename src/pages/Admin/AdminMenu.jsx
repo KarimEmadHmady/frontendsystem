@@ -29,7 +29,7 @@ const AdminMenu = () => {
       </button>
 
       {isMenuOpen && (
-        <section className="bg-[#151515] p-4 fixed left-7 top-5 z-120">
+        <section className="bg-[#151515] p-4 fixed left-7 top-5 z-40">
           <ul className="list-none mt-2">
             <li>
               <NavLink
