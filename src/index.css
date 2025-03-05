@@ -32,7 +32,7 @@ body {
   color: #fff;
   font-family: 'Cairo', sans-serif;
   direction: rtl;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 input,
