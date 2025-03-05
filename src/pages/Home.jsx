@@ -71,7 +71,7 @@ const Home = () => {
 
           <img
             className="object-cover w-full h-64 mt-10 rounded-lg lg:h-96"
-            src="https://images.unsplash.com/photo-1607776905497-b4f788205f6a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://www.cyfe.com/wp-content/uploads/2020/04/GA-dash-v2-1024x539.jpg"
             alt="img"
           />
 
