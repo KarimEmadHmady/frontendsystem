@@ -39,7 +39,7 @@ const AdminMenu = () => {
                   color: isActive ? "greenyellow" : "white",
                 })}
               >
-                Admin Dashboard
+                لوحة تحكم كمسؤول
               </NavLink>
             </li>
             <li>
@@ -50,7 +50,7 @@ const AdminMenu = () => {
                   color: isActive ? "greenyellow" : "white",
                 })}
               >
-                Create Category
+                إنشاء فئة
               </NavLink>
             </li>
             <li>
@@ -61,7 +61,7 @@ const AdminMenu = () => {
                   color: isActive ? "greenyellow" : "white",
                 })}
               >
-                Create Product
+                إنشاء المنتج
               </NavLink>
             </li>
             <li>
@@ -72,7 +72,7 @@ const AdminMenu = () => {
                   color: isActive ? "greenyellow" : "white",
                 })}
               >
-                All Products
+                جميع المنتجات
               </NavLink>
             </li>
             <li>
@@ -83,7 +83,7 @@ const AdminMenu = () => {
                   color: isActive ? "greenyellow" : "white",
                 })}
               >
-                Manage Users
+                إدارة المستخدمين
               </NavLink>
               <NavLink
                 className="list-item py-2 px-3 block mb-5 hover:bg-[#2E2D2D] rounded-sm"
@@ -92,7 +92,7 @@ const AdminMenu = () => {
                   color: isActive ? "greenyellow" : "white",
                 })}
               >
-                 Users Session 
+                 جلسة المستخدمين
               </NavLink>
               <NavLink
                 className="list-item py-2 px-3 block mb-5 hover:bg-[#2E2D2D] rounded-sm"
@@ -101,7 +101,7 @@ const AdminMenu = () => {
                   color: isActive ? "greenyellow" : "white",
                 })}
               >
-                 Admin Products 
+                 فلتر المنتجات
               </NavLink>
             </li>
             <li>
@@ -112,7 +112,7 @@ const AdminMenu = () => {
                   color: isActive ? "greenyellow" : "white",
                 })}
               >
-                Manage Orders
+                إدارة الطلبات
               </NavLink>
             </li>
           </ul>

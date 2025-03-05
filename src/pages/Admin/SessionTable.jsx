@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { CSVLink } from "react-csv";
 import AdminMenu from "./AdminMenu";
+import BASE_URL from "../../redux/constants";
 
 const SessionTable = () => {
   const [sessions, setSessions] = useState([]);
@@ -30,7 +31,7 @@ const SessionTable = () => {
     const fetchSessions = async () => {
       setIsLoading(true); 
       try {
-        const response = await axios.get("https://backendsystem.vercel.app/api/sessions" ,  { withCredentials: true } ) 
+        const response = await axios.get(`${BASE_URL}/api/sessions` ,  { withCredentials: true } ) 
         
        const data = response.data;
 

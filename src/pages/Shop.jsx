@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/features/shop/shopSlice";
 import Loader from "../components/Loader";
 import ProductCard from "./Products/ProductCard";
+import BASE_URL from "../redux/constants";
 
 const Shop = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ const Shop = () => {
       try {
         setLoading(true);
         setTimeout(async () => {
-          const { data } = await axios.get("https://backendsystem.vercel.app/api/products", {
+          const { data } = await axios.get(`${BASE_URL}/api/products`, {
             withCredentials: true, 
           });
 

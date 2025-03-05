@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Link } from "react-router-dom";
+import BASE_URL from '../../redux/constants';
+
 const UpdateProduct = () => {
   const [serialNumber, setSerialNumber] = useState('');
   const [brand, setBrand] = useState('');
@@ -15,7 +17,7 @@ const UpdateProduct = () => {
 
     try {
       const response = await axios.put(
-        `https://backendsystem.vercel.app/api/products/update-brand`,
+        `${BASE_URL}/api/products/update-brand`,
         { serialnumber: serialNumber, brand },
         {
           withCredentials: true,
