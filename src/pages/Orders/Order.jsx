@@ -8,12 +8,6 @@ const Order = () => {
   const { data: order, refetch, isLoading, error } = useGetOrderDetailsQuery(orderId);
   const [deleteOrder, { isLoading: isDeleting }] = useDeleteOrderMutation();
 
-  const {
-    data: order,
-    refetch,
-    isLoading,
-    error,
-  } = useGetOrderDetailsQuery(orderId);
 
   const handleDelete = async () => {
     if (window.confirm("هل أنت متأكد من حذف الطلب؟")) {
