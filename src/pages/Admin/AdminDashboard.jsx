@@ -92,7 +92,7 @@ const AdminDashboard = () => {
     <>
       <AdminMenu />
 
-      <section className="xl:ml-[4rem] md:ml-[0rem] page-ltr margine-btn-phone">
+      <section className="xl:ml-[4rem] md:ml-[0rem] page-ltr margine-btn-phone p-5">
         <div className="page-dashboard w-[80%] flex justify-around flex-wrap">
           <div className="rounded-lg bg-black p-5 w-[20rem] mt-5">
             <div className="font-bold rounded-full w-[3rem] bg-[#5f2476] text-center p-3">

@@ -32,7 +32,7 @@ const OrderList = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
-        <div className="container mx-auto page-ltr margine-btn-phone">
+        <div className="container mx-auto page-ltr margine-btn-phone p-[20px]">
           <AdminMenu />
 
           <CSVLink
@@ -57,7 +57,7 @@ const OrderList = () => {
             تحميل كـ Excel
           </CSVLink>
 
-          <table className="w-full border-collapse border border-gray-300 mt-4">
+          <table className="w-full border-collapse border border-gray-300 mt-4 ">
             <thead className="w-full border">
               <tr className="mb-[5rem]">
                 <th className="text-left pl-1">ITEMS</th>
@@ -77,7 +77,7 @@ const OrderList = () => {
                     <img
                       src={order.orderItems[0].image}
                       alt={order._id}
-                      className="w-[5rem] pt-4"
+                      className="w-[5rem] pt-4 "
                     />
                   </td>
                   <td>
