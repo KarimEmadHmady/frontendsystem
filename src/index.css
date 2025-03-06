@@ -314,6 +314,7 @@ table {
     z-index: 39;
     position: fixed;
     transition: 0.8s;
+    height: 100vh;
   }
 
   .containar-filter {
