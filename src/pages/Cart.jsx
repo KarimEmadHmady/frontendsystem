@@ -20,7 +20,7 @@ const Cart = () => {
 
   return (
     <>
-      <div className="container flex justify-around items-start flex-wrap mx-auto mt-8 page-ltr margine-btn-phone">
+      <div className="container flex justify-around items-start flex-wrap mx-auto mt-8  margine-btn-phone">
         {cartItems.length === 0 ? (
           <div>
             لا يوجد منتجات مضافة لعمل طلب  
@@ -43,13 +43,13 @@ const Cart = () => {
                     />
                   </div>
 
-                  <div className="flex-1 ml-4">
+                  <div className="flex-1 mr-4">
                     <Link to={`/product/${item._id}`} className="text-[#5f2476]">
                       {item.name}
                     </Link>
 
-                    <div className="mt-2 text-white">{item.brand}</div>
-                    <p className="my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
+                    <div className="mt-1 text-white">{item.brand}</div>
+                    <p className="my-1 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
                       رقم السيريال: {item.serialnumber}
                     </p>
                     <div className="mt-2 text-white font-bold">
@@ -59,7 +59,7 @@ const Cart = () => {
 
                   <div className="btn-cart-width">
                     <button
-                      className="text-[#5f2476] mr-[5rem]"
+                      className="text-[#5f2476] ml-[5rem]"
                       onClick={() => removeFromCartHandler(item._id)}
                     >
                       <FaTrash className="ml-[1rem] mt-[.5rem]" />
