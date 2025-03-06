@@ -99,7 +99,7 @@ const AdminDashboard = () => {
               $
             </div>
 
-            <p className="mt-5">Sales</p>
+            <p className="mt-5">اجمالى المبيعات</p>
             <h1 className="text-xl font-bold">
               EGP {isLoading ? <Loader /> : sales.totalSales.toFixed(2)}
             </h1>
@@ -109,7 +109,7 @@ const AdminDashboard = () => {
               $
             </div>
 
-            <p className="mt-5">Customers</p>
+            <p className="mt-5">عدد المستخدمين</p>
             <h1 className="text-xl font-bold">
               0{isLoading ? <Loader /> : customers?.length}
             </h1>
@@ -119,7 +119,7 @@ const AdminDashboard = () => {
               0
             </div>
 
-            <p className="mt-5">All Orders</p>
+            <p className="mt-5">عدد الاوردرات</p>
             <h1 className="text-xl font-bold">
               0{isLoading ? <Loader /> : orders?.totalOrders}
             </h1>
