@@ -50,14 +50,14 @@ const Cart = () => {
 
                     <div className="flex-1 mr-4">
                       <Link to={`/product/${item._id}`} className="text-[#5f2476]">
-                        {item.name}
+                       اسم المنتج: {item.name}
                       </Link>
 
-                      <div className="mt-1 text-white">{item.brand}</div>
+                      <div className="mt-1 text-white"> اسم البراند:{item.brand}</div>
                       <p className="my-1 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
                         رقم السيريال: {item.serialnumber}
                       </p>
-                      <div className="mt-2 text-white font-bold">L.E {item.price}</div>
+                      <div className="mt-2 text-white font-bold">السعر:{item.price} L.E</div>
                     </div>
 
                     <div className="btn-cart-width">
@@ -79,7 +79,7 @@ const Cart = () => {
               </h2>
 
               <div className="text-2xl font-bold">
-                L.E {" "}
+               اجمالى السعر:  {" "} L.E
                 {cartItems.reduce((acc, item) => acc + item.price, 0).toFixed(2)}
               </div>
 
