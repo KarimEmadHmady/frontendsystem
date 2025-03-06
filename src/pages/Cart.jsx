@@ -72,19 +72,19 @@ const Cart = () => {
                 ))}
 
 
-              <div className="mt-8 w-[40rem]">
+              <div className="mt-8 w-[40rem] rtl ">
                 <div className="p-4 rounded-lg">
                 <h2 className="text-xl font-semibold mb-2">
                 عدد المنتجات ({cartItems.length})
               </h2>
 
-              <div className="text-2xl font-bold">
+              <div className="text-2xl font-bold rtl ">
                اجمالى السعر: L.E {" "} 
                  {cartItems.reduce((acc, item) => acc + item.price, 0).toFixed(2)}
               </div>
 
                   <button
-                    className="btn-cart bg-[#5f2476] mt-4 py-2 px-4 rounded-full text-lg w-full"
+                    className="btn-cart bg-[#5f2476] mt-4 py-2 px-4 rounded-full text-lg w-full rtl "
                     disabled={cartItems.length === 0}
                     onClick={checkoutHandler}
                   >
