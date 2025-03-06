@@ -47,7 +47,7 @@ const Home = () => {
       </div>
       
       <div className="lg:col-span-3">
-        <img className="w-full rounded-lg shadow-xl" src="../public/software-solutions.png" alt="" />
+        <img className="w-full rounded-lg shadow-xl" src="/software-solutions.png" alt="" />
       </div>
     </div>
   </div>

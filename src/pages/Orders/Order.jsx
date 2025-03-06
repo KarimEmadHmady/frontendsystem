@@ -14,7 +14,7 @@ const Order = () => {
       try {
         await deleteOrder(orderId).unwrap();
         alert("تم حذف الطلب بنجاح!");
-        window.location.href = "/admin/orderlist"; 
+        window.location.href = "/user-orders"; 
       } catch (err) {
         alert("حدث خطأ أثناء الحذف!");
       }
@@ -38,7 +38,7 @@ const Order = () => {
                     <th className="p-2">صورة الامنتج </th>
                     <th className="p-2">اسم المنتج</th>
                     <th className="p-2">رقم السيريال</th>
-                    <th className="p-2 text-center">الكمية</th>
+                   
                     <th className="p-2">التاريخ و الوقت</th>
                     <th className="p-2">الاجمالى</th>
                   </tr>
@@ -60,7 +60,7 @@ const Order = () => {
                       </td>
                       <td className="p-2 text-center">{item.serialnumber}</td>
 
-                      <td className="p-2 text-center">{item.qty}</td>
+                     
                       <td className="p-2 text-center">
                         {new Date(order.createdAt).toLocaleString("en-US", {
                           year: "numeric",
@@ -72,8 +72,9 @@ const Order = () => {
                         })}
                       </td>
                       <td className="p-2 text-center">
-                        L.E {(item.qty * item.price).toFixed(2)}
+                        L.E {Number(item.price).toFixed(2)}
                       </td>
+
                     </tr>
                   ))}
                 </tbody>
@@ -121,7 +122,8 @@ const Order = () => {
 
         <div className="flex justify-between mb-2">
           <span>اجمالى عدد المنتجات فى الطلب</span>
-          <span>{order.orderItems.reduce((acc, item) => acc + item.qty, 0)}</span>
+          <span>{order.orderItems.length}</span>
+
         </div>
 
         <div className="flex justify-between mb-2">

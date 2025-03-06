@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTrash } from "react-icons/fa";
-import { addToCart, removeFromCart } from "../redux/features/cart/cartSlice";
+import { removeFromCart } from "../redux/features/cart/cartSlice";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -9,10 +9,6 @@ const Cart = () => {
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
-
-  const addToCartHandler = (product, qty) => {
-    dispatch(addToCart({ ...product, qty }));
-  };
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
@@ -24,10 +20,13 @@ const Cart = () => {
 
   return (
     <>
-      <div className="container flex justify-around items-start flex wrap mx-auto mt-8 page-ltr">
+      <div className="container flex justify-around items-start flex-wrap mx-auto mt-8 page-ltr">
         {cartItems.length === 0 ? (
           <div>
-            لا يوجد منتجات مضافة لعمل طلب   <Link to="/addserialNumber" className="text-red-500	">  اذهب لاضافة منتج  </Link>
+            لا يوجد منتجات مضافة لعمل طلب  
+            <Link to="/addserialNumber" className="text-red-500 ml-2">
+              اذهب لإضافة منتج
+            </Link>
           </div>
         ) : (
           <>
@@ -35,7 +34,7 @@ const Cart = () => {
               <h1 className="text-2xl font-semibold mb-4">طلب منتج</h1>
 
               {cartItems.map((item) => (
-                <div key={item._id} className="flex items-enter mb-[1rem] pb-2">
+                <div key={item._id} className="flex items-center mb-[1rem] pb-2">
                   <div className="w-[5rem] h-[5rem]">
                     <img
                       src={item.image}
@@ -51,27 +50,11 @@ const Cart = () => {
 
                     <div className="mt-2 text-white">{item.brand}</div>
                     <p className="my-4 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
-                       رقمالسيريال:   {item.serialnumber} 
-              </p>
+                      رقم السيريال: {item.serialnumber}
+                    </p>
                     <div className="mt-2 text-white font-bold">
                       L.E {item.price}
                     </div>
-                  </div>
-
-                  <div className="selection-cart-width w-24">
-                    <select
-                      className="selection-cart w-full p-1 border rounded text-black"
-                      value={item.qty}
-                      onChange={(e) =>
-                        addToCartHandler(item, Number(e.target.value))
-                      }
-                    >
-                      {[...Array(item.countInStock).keys()].map((x) => (
-                        <option key={x + 1} value={x + 1}>
-                          {x + 1}
-                        </option>
-                      ))}
-                    </select>
                   </div>
 
                   <div className="btn-cart-width">
@@ -87,19 +70,17 @@ const Cart = () => {
 
               <div className="mt-8 w-[40rem]">
                 <div className="p-4 rounded-lg">
-                  <h2 className="text-xl font-semibold mb-2">
-                    عدد المنتجات ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
-                  </h2>
+                <h2 className="text-xl font-semibold mb-2">
+                عدد المنتجات ({cartItems.length})
+              </h2>
 
-                  <div className=" text-2xl font-bold">
-                    L.E {" "}
-                    {cartItems
-                      .reduce((acc, item) => acc + item.qty * item.price, 0)
-                      .toFixed(2)}
-                  </div>
+              <div className="text-2xl font-bold">
+                L.E {" "}
+                {cartItems.reduce((acc, item) => acc + item.price, 0).toFixed(2)}
+              </div>
 
                   <button
-                    className="btn-cart  bg-[#5f2476] mt-4 py-2 px-4 rounded-full text-lg w-full"
+                    className="btn-cart bg-[#5f2476] mt-4 py-2 px-4 rounded-full text-lg w-full"
                     disabled={cartItems.length === 0}
                     onClick={checkoutHandler}
                   >
@@ -116,3 +97,4 @@ const Cart = () => {
 };
 
 export default Cart;
+

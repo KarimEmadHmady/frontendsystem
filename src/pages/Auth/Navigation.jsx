@@ -80,11 +80,12 @@ const Navigation = () => {
             {cartItems.length > 0 && (
               <span>
                 <span className="px-1 py-0 text-sm text-white bg-[#5f2476] rounded-full">
-                  {cartItems.reduce((a, c) => a + c.qty, 0)}
+                  {cartItems.length}
                 </span>
               </span>
             )}
           </div>
+
         </Link>
 
         <Link to="/addserialNumber" className="flex relative">

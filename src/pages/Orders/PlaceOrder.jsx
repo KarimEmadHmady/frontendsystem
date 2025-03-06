@@ -23,27 +23,36 @@ const PlaceOrder = () => {
     }
   }, [cart.shippingAddress.address, navigate]);
 
+
+  const itemsPrice = cart.cartItems.reduce((acc, item) => acc + (Number(item.price) || 0), 0);
+
+
   const placeOrderHandler = async () => {
     try {
-      const totalPrice = cart.itemsPrice; 
-
+      const totalPrice = Number(itemsPrice.toFixed(2)); 
+  
+      if (isNaN(totalPrice)) {
+        toast.error("خطأ في الحساب: الإجمالي غير صالح!");
+        return;
+      }
+  
       const res = await createOrder({
-        orderItems: cart.cartItems,
+        orderItems: cart.cartItems.map((item) => ({
+          ...item,
+          qty: 1, 
+        })),
         shippingAddress: cart.shippingAddress,
-        itemsPrice: cart.itemsPrice,
+        itemsPrice: totalPrice, 
         totalPrice,
-        
       }).unwrap();
-      
-      
-      
+  
       dispatch(clearCartItems());
       navigate(`/order/${res._id}`);
     } catch (error) {
-      toast.error(error);
+      toast.error("Error creating order: " + (error.data?.message || error.message));
     }
   };
-
+  
   return (
     <>
       <ProgressSteps step1 step2 step3 />
@@ -56,10 +65,10 @@ const PlaceOrder = () => {
             <table className="w-full border-collapse">
               <thead>
                 <tr>
-                  <td className="px-1 py-2 text-left align-top">صورة المنتج </td>
-                  <td className="px-1 py-2 text-left">اسم المنتج </td>
-                  <td className="px-1 py-2 text-left">الكمية</td>
-                  <td className="px-1 py-2 text-left">الاجمالى</td>
+                  <td className="px-1 py-2 text-left align-top">صورة المنتج</td>
+                  <td className="px-1 py-2 text-left">اسم المنتج</td>
+                  <td className="px-1 py-2 text-left"> رقم السيريال </td>
+                  <td className="px-1 py-2 text-left">الإجمالي</td>
                 </tr>
               </thead>
 
@@ -77,10 +86,8 @@ const PlaceOrder = () => {
                     <td className="p-2">
                       <Link to={`/product/${item.product}`}>{item.name}</Link>
                     </td>
-                    <td className="p-2">{item.qty}</td>
-                    <td className="p-2">
-                      L.E {(item.qty * item.price).toFixed(2)}
-                    </td>
+                    <td className="p-2">{item.serialnumber}</td>
+                    <td className="p-2">L.E {item.price.toFixed(2)}</td>
                   </tr>
                 ))}
               </tbody>
@@ -89,31 +96,35 @@ const PlaceOrder = () => {
         )}
 
         <div className="mt-8">
-          <h2 className="text-2xl font-semibold mb-5">ملخص الطلب</h2>
-          <div className="flex justify-between flex-wrap p-8 bg-[#181818]">
-            <ul className="text-lg">
-            <li>
-              <span className="font-semibold mb-4">عدد العناصر: </span> {cart.cartItems.reduce((acc, item) => acc + item.qty, 0)}
-            </li>
+          <h2 className="text-2xl font-semibold mb-5 text-center">ملخص الطلب</h2>
+          <div className="flex justify-between flex-wrap p-8 bg-[#181818] page-rtl">
 
-              <li>
-                <span className="font-semibold mb-4">الاجمالى: </span> 
-                 جنيه  {cart.itemsPrice}
-              </li>
-            </ul>
-
-            {error && <Message variant="danger">{error.data.message}</Message>}
-
-            <div>
-              <h2 className="text-2xl font-semibold mb-1 ">معلومات الطلب</h2>
+          <div>
+              <h2 className="text-2xl font-semibold mb-1">معلومات الطلب</h2>
               <p>
                 <strong>تفاصيل الطلب:</strong>
-
                 <p>رقم السيريال: {cart.shippingAddress.address}</p>
-                <p>اسم المنتج: {cart.shippingAddress.city} </p>
+                <p>اسم المنتج: {cart.shippingAddress.city}</p>
                 <p>اسم البائع: {cart.shippingAddress.country}</p>
               </p>
             </div>
+
+
+
+            {error && <Message variant="danger">{error.data.message}</Message>}
+
+
+            <ul className="text-lg">
+              <li>
+              <span className="font-semibold mb-4">عدد العناصر: </span> {cart.cartItems.length}
+
+              </li>
+
+              <li>
+                <span className="font-semibold mb-4">الإجمالي:</span> جنيه {itemsPrice.toFixed(2)}
+              </li>
+            </ul>
+
           </div>
 
           <button
