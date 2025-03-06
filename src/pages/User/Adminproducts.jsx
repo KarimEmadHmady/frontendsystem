@@ -84,7 +84,7 @@ const Adminproducts = () => {
   };
 
   return (
-    <div className="container  margine-btn-phone overflow-x-hidden "> {/* mx-auto page-ltr */}
+    <div className="container  contaner-filter-page margine-btn-phone overflow-x-hidden "> {/* mx-auto page-ltr */}
       <AdminMenu />
       <div className="flex md:flex-row">
         <div className={`list-filter margine-btn-phone bg-[#151515] p-3 mt-2 mb-2 transition-all duration-300 ${isFilterOpen ? "left-0" : "left-[-267px]"}`}>

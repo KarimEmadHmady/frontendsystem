@@ -111,6 +111,10 @@ textarea {
    .page-order-info {
     margin: 0 239px 0 0 ;
   } 
+  .contaner-filter-page {
+    direction: ltr;
+    margin: auto;
+  }
 }
 @media (max-width:600px) {
 
