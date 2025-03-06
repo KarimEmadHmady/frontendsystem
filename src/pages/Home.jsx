@@ -5,7 +5,7 @@ const Home = () => {
 <section className="first-sections-home py-10 sm:py-16 lg:py-24">
   <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <div className="max-w-xl mx-auto text-center">
-      <p className="main-header-p text-sm font-semibold tracking-widest text-[#5f2476] uppercase">
+      <p className="main-header-p text-sm font-semibold text-[#5f2476] uppercase">
         الابتكار أولًا
       </p>
       <h2 className="mt-6 text-2xl font-bold leading-tight text-white sm:text-2xl lg:text-3xl">
