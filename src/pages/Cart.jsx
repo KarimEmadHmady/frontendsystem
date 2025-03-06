@@ -20,7 +20,7 @@ const Cart = () => {
 
   return (
     <>
-      <div className="container flex justify-around items-start flex-wrap mx-auto mt-8  margine-btn-phone  page-ltr">
+      <div className="container flex justify-around items-start flex-wrap mx-auto mt-8  margine-btn-phone  ">
         {cartItems.length === 0 ? (
           <div>
             لا يوجد منتجات مضافة لعمل طلب  
@@ -30,7 +30,7 @@ const Cart = () => {
           </div>
         ) : (
           <>
-            <div className="flex flex-col w-[80%] ">
+            <div className="flex flex-col w-[80%] page-rtl ">
               <h1 className="text-2xl font-semibold mb-4">طلب منتج</h1>
 
               {cartItems.map((item, index) => (
