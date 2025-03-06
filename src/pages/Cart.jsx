@@ -20,7 +20,7 @@ const Cart = () => {
 
   return (
     <>
-      <div className="container flex justify-around items-start flex-wrap mx-auto mt-8 page-ltr">
+      <div className="container flex justify-around items-start flex-wrap mx-auto mt-8 page-ltr margine-btn-phone">
         {cartItems.length === 0 ? (
           <div>
             لا يوجد منتجات مضافة لعمل طلب  
