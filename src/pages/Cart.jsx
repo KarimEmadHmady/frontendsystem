@@ -33,40 +33,44 @@ const Cart = () => {
             <div className="flex flex-col w-[80%]">
               <h1 className="text-2xl font-semibold mb-4">طلب منتج</h1>
 
-              {cartItems.map((item) => (
-                <div key={item._id} className="flex items-center mb-[1rem] pb-2">
-                  <div className="w-[5rem] h-[5rem]">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover rounded"
-                    />
-                  </div>
+              {cartItems.map((item, index) => (
+                  <div
+                    key={item._id}
+                    className={`flex items-center mb-[1rem] pb-2 border-b border-gray-600 ${
+                      index === cartItems.length - 1 ? "border-none" : ""
+                    }`}
+                  >
+                    <div className="w-[5rem] h-[5rem]">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover rounded"
+                      />
+                    </div>
 
-                  <div className="flex-1 mr-4">
-                    <Link to={`/product/${item._id}`} className="text-[#5f2476]">
-                      {item.name}
-                    </Link>
+                    <div className="flex-1 mr-4">
+                      <Link to={`/product/${item._id}`} className="text-[#5f2476]">
+                        {item.name}
+                      </Link>
 
-                    <div className="mt-1 text-white">{item.brand}</div>
-                    <p className="my-1 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
-                      رقم السيريال: {item.serialnumber}
-                    </p>
-                    <div className="mt-2 text-white font-bold">
-                      L.E {item.price}
+                      <div className="mt-1 text-white">{item.brand}</div>
+                      <p className="my-1 xl:w-[35rem] lg:w-[35rem] md:w-[30rem] text-[#B0B0B0]">
+                        رقم السيريال: {item.serialnumber}
+                      </p>
+                      <div className="mt-2 text-white font-bold">L.E {item.price}</div>
+                    </div>
+
+                    <div className="btn-cart-width">
+                      <button
+                        className="text-[#5f2476] ml-[5rem]"
+                        onClick={() => removeFromCartHandler(item._id)}
+                      >
+                        <FaTrash className="ml-[1rem] mt-[.5rem]" />
+                      </button>
                     </div>
                   </div>
+                ))}
 
-                  <div className="btn-cart-width">
-                    <button
-                      className="text-[#5f2476] ml-[5rem]"
-                      onClick={() => removeFromCartHandler(item._id)}
-                    >
-                      <FaTrash className="ml-[1rem] mt-[.5rem]" />
-                    </button>
-                  </div>
-                </div>
-              ))}
 
               <div className="mt-8 w-[40rem]">
                 <div className="p-4 rounded-lg">
