@@ -13,7 +13,7 @@ import {
   FaStore,
 } from "react-icons/fa";
 import moment from "moment";
-import HeartIcon from "./HeartIcon";
+
 
 import { addToCart } from "../../redux/features/cart/cartSlice";
 
@@ -64,8 +64,6 @@ const ProductDetails = () => {
                 alt={product.name}
                 className="w-full xl:w-[50rem] lg:w-[45rem] md:w-[30rem] sm:w-[20rem] mr-[2rem]"
               />
-
-              {/* <HeartIcon product={product} /> */}
             </div>
 
             <div className="flex flex-col page-rtl gap-[13px]  ">
