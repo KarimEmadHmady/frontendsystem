@@ -333,6 +333,6 @@ table {
   direction: ltr !important;
 }
 
-.page-rtl{
+.page-rtl , .content-cart{
   direction: rtl !important;
 }

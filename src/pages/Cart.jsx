@@ -30,13 +30,13 @@ const Cart = () => {
           </div>
         ) : (
           <>
-            <div className="flex flex-col w-[80%] ">
+            <div className="content-cart flex flex-col w-[80%] ">
               <h1 className="text-2xl font-semibold mb-4 text-center">طلب منتج</h1>
 
               {cartItems.map((item, index) => (
                   <div
                     key={item._id}
-                    className={`flex items-center mb-[1rem] pb-2 border-b border-gray-600 rtl ${
+                    className={`flex items-center mb-[1rem] pb-2 border-b border-gray-600  ${
                       index === cartItems.length - 1 ? "border-none" : ""
                     }`}
                   >
@@ -72,19 +72,19 @@ const Cart = () => {
                 ))}
 
 
-              <div className="mt-8 w-[40rem] rtl ">
+              <div className="mt-8 w-[40rem]  ">
                 <div className="p-4 rounded-lg">
                 <h2 className="text-xl font-semibold mb-2">
                 عدد المنتجات ({cartItems.length})
               </h2>
 
-              <div className="text-2xl font-bold rtl ">
+              <div className="text-2xl font-bold  ">
                اجمالى السعر: L.E {" "} 
                  {cartItems.reduce((acc, item) => acc + item.price, 0).toFixed(2)}
               </div>
 
                   <button
-                    className="btn-cart bg-[#5f2476] mt-4 py-2 px-4 rounded-full text-lg w-full rtl "
+                    className="btn-cart bg-[#5f2476] mt-4 py-2 px-4 rounded-full text-lg w-full  "
                     disabled={cartItems.length === 0}
                     onClick={checkoutHandler}
                   >
