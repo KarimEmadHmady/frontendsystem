@@ -36,7 +36,7 @@ const Shipping = () => {
   }, [navigate, shippingAddress]);
 
   return (
-    <div className="container mx-auto mt-10 px-5">
+    <div className="container mx-auto mt-10 px-5 margine-btn-phone">
       <ProgressSteps step1 step2 />
       <div className="mt-[10rem] flex justify-around items-center flex-wrap">
         <form onSubmit={submitHandler} className="w-[40rem]">
