@@ -32,7 +32,7 @@ const OrderList = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
-        <div className="container mx-auto page-ltr margine-btn-phone p-[20px]">
+        <div className="container mx-auto page-ltr margine-btn-phone p-[10px]">
           <AdminMenu />
 
           <CSVLink
