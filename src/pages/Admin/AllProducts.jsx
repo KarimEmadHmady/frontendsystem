@@ -52,7 +52,7 @@ const AllProducts = () => {
                       className="w-[10rem] object-cover image-allproduct-page"
                     />
                     <div className="p-4 flex flex-col justify-around">
-                      <div className="flex justify-between">
+                      <div className="flex justify-between flex-col">
                         <h5 className="text-xl font-semibold mb-2 font-allproduct-page">
                           {product?.name}
                         </h5>
