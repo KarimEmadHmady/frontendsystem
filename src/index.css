@@ -226,7 +226,8 @@ table {
   font-size: 15px !important;
 }
 .page-Sessiontable  img{
-  height: 50px !important;
+  height: 37px !important;
+  width: 100px;
 }
 .brand-serialnumber{
   margin: 150px 15px;
