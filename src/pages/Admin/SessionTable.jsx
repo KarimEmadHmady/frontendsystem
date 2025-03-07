@@ -89,7 +89,7 @@ const SessionTable = () => {
           </div>
 
           <table className="w-full border-collapse border border-gray-300 mt-4">
-            <thead>
+            <thead className="sm:text-[6px]">
               <tr className="bg-black-200">
                 <th className="border p-2">#</th>
                 <th className="border p-2">الصورة</th>
@@ -100,7 +100,7 @@ const SessionTable = () => {
                 <th className="border p-2">وقت تسجيل الدخول</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="sm:text-[6px]">
               {sessions.map((session, index) => (
                 <tr key={session._id} className="text-center">
                   <td className="border p-2">{index + 1}</td>
