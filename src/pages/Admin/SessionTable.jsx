@@ -60,7 +60,7 @@ const SessionTable = () => {
   }, []);
 
   return (
-    <div className="p-4 p-[120px] page-Sessiontable page-ltr margine-btn-phone">
+    <div className="p-4 p-[120px] page-Sessiontable page-ltr margine-btn-phone overflow-auto">
       <AdminMenu />
       <h2 className="text-xl font-bold mb-4 text-center">سجلات التسجيل</h2>
 
@@ -89,7 +89,7 @@ const SessionTable = () => {
           </div>
 
           <table className="w-full border-collapse border border-gray-300 mt-4">
-            <thead className="sm:text-[6px]">
+            <thead >
               <tr className="bg-black-200">
                 <th className="border p-2">#</th>
                 <th className="border p-2">الصورة</th>
@@ -100,7 +100,7 @@ const SessionTable = () => {
                 <th className="border p-2">وقت تسجيل الدخول</th>
               </tr>
             </thead>
-            <tbody className="sm:text-[6px]">
+            <tbody >
               {sessions.map((session, index) => (
                 <tr key={session._id} className="text-center">
                   <td className="border p-2">{index + 1}</td>

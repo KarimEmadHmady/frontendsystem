@@ -57,7 +57,7 @@ const UserList = () => {
   };
 
   return (
-    <div className="p-4 page-ltr margine-btn-phone">
+    <div className="p-4 page-ltr margine-btn-phone overflow-auto">
       <AdminMenu />
       <h1 className="text-2xl font-semibold mb-4 text-center">Users</h1>
       {isLoading ? (
@@ -91,7 +91,7 @@ const UserList = () => {
           </CSVLink>
 
           <table className="w-full md:w-4/5 mx-auto">
-            <thead className="sm:text-[10px]">
+            <thead>
               <tr>
                 <th className="px-4 py-2 text-left">ID</th>
                 <th className="px-4 py-2 text-left">NAME</th>
@@ -101,7 +101,7 @@ const UserList = () => {
                 <th className="px-4 py-2"></th>
               </tr>
             </thead>
-            <tbody className="sm:text-[6px]">
+            <tbody >
               {users.map((user) => (
                 <tr key={user._id}>
                   <td className="px-4 py-2">{user._id}</td>
