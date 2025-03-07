@@ -170,7 +170,7 @@ const UserList = () => {
                       <FaTimes style={{ color: "red" }} />
                     )}
                   </td>
-                  <td className="px-4 py-2">
+                  <td className="px-4 py-2 text-[11px]">
                     {user.createdAt
                       ? new Date(user.createdAt).toLocaleString("en-US", {
                           timeZone: "Africa/Cairo",

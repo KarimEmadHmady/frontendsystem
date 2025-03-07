@@ -122,7 +122,7 @@ const SessionTable = () => {
                       ? `${session.location.latitude}, ${session.location.longitude}`
                       : "غير متوفر"}
                   </td>
-                  <td className="border p-2 text-[6px]">{session.address}</td>
+                  <td className="border p-2 text-[11px]">{session.address}</td>
                   <td className="border p-2">
                     {new Date(session.loginTime).toLocaleString()}
                   </td>
