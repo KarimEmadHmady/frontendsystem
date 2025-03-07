@@ -115,23 +115,6 @@ const AdminProductUpdate = () => {
 
 
 
-
-  useEffect(() => {
-    // ✅ استرجاع آخر كاتيجوري محفوظ من localStorage
-    const savedCategory = localStorage.getItem("selectedCategory");
-    if (savedCategory) {
-      setCategory(savedCategory);
-    }
-  }, []);
-  
-  const handleCategoryChange = (e) => {
-    const selectedCategory = e.target.value;
-    setCategory(selectedCategory);
-  
-    // ✅ حفظ الكاتيجوري الجديد في localStorage
-    localStorage.setItem("selectedCategory", selectedCategory);
-  };
-
   return (
     <div className="container xl:mx-[9rem] sm:mx-[0] margine-btn-phone">
       <div className="flex flex-col md:flex-row">
@@ -195,7 +178,7 @@ const AdminProductUpdate = () => {
             />
 
             <label>الفئة</label>
-{/*             <select
+            <select
               className="p-4 mb-3 w-full border rounded-lg bg-[#101011] text-white"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
@@ -203,19 +186,7 @@ const AdminProductUpdate = () => {
               {categories.map((c) => (
                 <option key={c._id} value={c._id}>{c.name}</option>
               ))}
-            </select> */}
-            <select
-                className="p-4 mb-3 w-full border rounded-lg bg-[#101011] text-white"
-                value={category}
-                onChange={handleCategoryChange} // ✅ استدعاء الدالة عند التغيير
-              >
-                {categories.map((c) => (
-                  <option key={c._id} value={c._id}>
-                    {c.name}
-                  </option>
-                ))}
-              </select>
-
+            </select>
 
             <button onClick={handleSubmit} className="py-4 px-10 mt-5 rounded-lg bg-green-600">
               تحديث
