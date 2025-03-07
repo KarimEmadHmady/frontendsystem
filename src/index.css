@@ -97,7 +97,7 @@ textarea {
 
  }
 
- .apexcharts-menu {
+ .apexcharts-menu , .page-dashboard-chart{
   color: #000 !important;
  }
 
