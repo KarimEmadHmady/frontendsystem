@@ -166,8 +166,13 @@ textarea {
  .page-dashboard-chart{
   width: 100%;
   height: 100%;
-  margin: 0;
+  margin: 20px 0 0 0 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
  }
+ 
  .page-info-order {
   font-size: 15px;
   margin: 0 8px;
