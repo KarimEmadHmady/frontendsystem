@@ -205,12 +205,13 @@ const AdminDashboard = () => {
   });
 
   useEffect(() => {
-    if (salesDetail) {
+    console.log("🚀 salesDetail:", salesDetail);
+    if (salesDetail && salesDetail.length > 0) {
       const formattedSalesDate = salesDetail.map((item) => ({
         x: item._id,
         y: item.totalSales,
       }));
-
+  
       setChartData({
         series: [{ name: "المبيعات", data: formattedSalesDate.map((item) => item.y) }],
         options: {
@@ -218,8 +219,18 @@ const AdminDashboard = () => {
           xaxis: { categories: formattedSalesDate.map((item) => item.x) },
         },
       });
+    } else {
+      // بيانات افتراضية
+      setChartData({
+        series: [{ name: "المبيعات", data: [10, 20, 30, 40, 50] }],
+        options: {
+          chart: { type: "bar", height: 350 },
+          xaxis: { categories: ["يناير", "فبراير", "مارس", "أبريل", "مايو"] },
+        },
+      });
     }
   }, [salesDetail]);
+  
 
   return (
     <>
@@ -251,9 +262,10 @@ const AdminDashboard = () => {
         </div>
 
         {/* 🔹 رسم المخطط الديناميكي */}
-        <div className="page-dashboard-chart ml-[10rem] mt-[4rem]">
+        <div className="page-dashboard-chart ml-[10rem] mt-[4rem] border border-red-500">
           <ReactApexChart options={chartData.options} series={chartData.series} type="bar" width="70%" />
         </div>
+
 
         <div className="mt-[4rem]">
           <OrderList />
