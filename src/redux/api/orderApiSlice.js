@@ -52,15 +52,15 @@ export const orderApiSlice = apiSlice.injectEndpoints({
     }),
 
     getTotalOrders: builder.query({
-      query: () => `${ORDERS_URL}/api/orders/total-orders`,
+      query: () => `${ORDERS_URL}/total-orders`,
     }),
 
     getTotalSales: builder.query({
-      query: () => `${ORDERS_URL}/api/orders/total-sales`,
+      query: () => `${ORDERS_URL}/total-sales`,
     }),
 
     getTotalSalesByDate: builder.query({
-      query: () => `${ORDERS_URL}/api/orders/total-sales-by-date`,
+      query: () => `${ORDERS_URL}/total-sales-by-date`,
     }),
     deleteOrder: builder.mutation({
       query: (orderId) => ({
