@@ -25,8 +25,8 @@ const Order = () => {
   if (error) return <Message variant="danger">{error.data.message}</Message>;
 
   return (
-    <div className="page-info-order container flex flex-col ml-[10rem] md:flex-row page-ltr margine-btn-phone">
-      <div className="md:w-2/3 pr-4">
+    <div className="page-info-order container flex flex-col ml-[10rem] md:flex-row page-ltr margine-btn-phone p-[10px]">
+      <div className="md:w-2/3 ">
         <div className="border gray-300 mt-5 pb-4 mb-5">
           {order.orderItems.length === 0 ? (
             <Message>Order is empty</Message>
