@@ -91,7 +91,7 @@ const UserList = () => {
           </CSVLink>
 
           <table className="w-full md:w-4/5 mx-auto">
-            <thead>
+            <thead className="sm:text-[10px]">
               <tr>
                 <th className="px-4 py-2 text-left">ID</th>
                 <th className="px-4 py-2 text-left">NAME</th>
@@ -101,7 +101,7 @@ const UserList = () => {
                 <th className="px-4 py-2"></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="sm:text-[6px]">
               {users.map((user) => (
                 <tr key={user._id}>
                   <td className="px-4 py-2">{user._id}</td>
