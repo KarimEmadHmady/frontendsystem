@@ -57,7 +57,7 @@ const AllProducts = () => {
                           {product?.name}
                         </h5>
 
-                        <p className="text-gray-400 text-xs">
+                        <p className="text-gray-400 text-xs mb-4">
                           Date of creation: {moment(product.createdAt).format("MMMM Do YYYY")}
                         </p>
                       </div>
@@ -66,7 +66,7 @@ const AllProducts = () => {
                         Serial Number: {product?.serialnumber?.substring(0, 160)}
                       </p>
 
-                      <div className="flex justify-between">
+                      <div className="flex justify-between align-center">
                         <Link
                           to={`/admin/product/update/${product._id}`}
                           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#5f2476] rounded-lg hover:bg-[#5f2476] focus:ring-4 focus:outline-none focus:ring-[#5f2476] dark:bg-[#5f2476] dark:hover:bg-[#5f2476] dark:focus:ring-[#5f2476]"
@@ -88,7 +88,7 @@ const AllProducts = () => {
                             />
                           </svg>
                         </Link>
-                        <p>L.E {product?.price}</p>
+                        <p className="ml-[5px]">L.E {product?.price}</p>
                       </div>
                     </div>
                   </div>
