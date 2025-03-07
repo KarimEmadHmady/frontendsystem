@@ -345,6 +345,8 @@ const AdminProductUpdate = () => {
       formData.append("category", category);
       formData.append("brand", brand);
 
+      console.log("🚀 إرسال البيانات:", Object.fromEntries(formData.entries()));
+
       const data = await updateProduct({ productId: params._id, formData });
 
       if (data?.error) {
