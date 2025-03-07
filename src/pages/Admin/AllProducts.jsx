@@ -20,20 +20,17 @@ const AllProducts = () => {
       <div className="container mx-[9rem] cargorylist-page page-ltr margine-btn-phone">
         <div className="flex flex-col md:flex-row">
           <div className="p-3">
-            <div className="ml-[2rem] text-xl font-bold h-12">
+            <div className="ml-[2rem] text-xl font-bold h-12 text-center">
               All Products ({products.length})
             </div>
 
-            {/* زر تحميل المنتجات بتنسيق CSV */}
             <CSVLink
               data={products.map((product) => ({
                 "Product Name": product.name,
                 "Serial Number": product.serialnumber,
-                "Brand": product?.brand || "N/A", // إضافة البراند إن وجد
+                "Brand": product?.brand || "N/A", 
                 "Date of Creation": moment(product.createdAt).format("MMMM Do YYYY"),
                 "Price": `L.E ${product.price}`,
-                "Quantity": product.quantity || "N/A", // إضافة الكمية
-                "Count In Stock": product.countInStock || "N/A", // إضافة عدد المتوفر في المخزون
               }))}
               filename="all_products.csv"
               className="mb-4 inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-green-500 rounded-lg hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-500"
