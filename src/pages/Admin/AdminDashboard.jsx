@@ -263,7 +263,7 @@ const AdminDashboard = () => {
 
         {/* 🔹 رسم المخطط الديناميكي */}
         <div className="page-dashboard-chart ml-[10rem] mt-[4rem]">
-          <ReactApexChart options={chartData.options} series={chartData.series} type="bar" width="70%" />
+          <ReactApexChart options={chartData.options} series={chartData.series} type="bar" width="90%" />
         </div>
 
         <div className="mt-[4rem]">
