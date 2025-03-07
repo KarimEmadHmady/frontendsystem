@@ -45,7 +45,7 @@ const AllProducts = () => {
                   to={`/admin/product/update/${product._id}`}
                   className="block mb-4 overflow-hidden"
                 >
-                  <div className="flex line-borderr">
+                  <div className="flex line-borderr items-center ">
                     <img
                       src={product.image}
                       alt={product.name}
