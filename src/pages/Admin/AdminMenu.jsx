@@ -72,7 +72,7 @@ const AdminMenu = () => {
                   color: isActive ? "greenyellow" : "white",
                 })}
               >
-                جميع المنتجات
+                تعديل المنتجات
               </NavLink>
             </li>
             <li>
