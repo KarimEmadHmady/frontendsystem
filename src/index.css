@@ -97,6 +97,10 @@ textarea {
 
  }
 
+ .apexcharts-menu {
+  color: #000 !important;
+ }
+
 
 @media (min-width:1070px) {
 
