@@ -74,7 +74,6 @@ export const orderApiSlice = apiSlice.injectEndpoints({
         method: "DELETE",
       }),
     }),
-    
   }),
 });
 

@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import HeartIcon from "./HeartIcon";
 
-
 const Product = ({ product }) => {
-  console.log(product)
+  console.log(product);
   return (
     <div className="small-product-header w-[30rem] ml-[2rem] p-3 relative">
       <div className="relative">

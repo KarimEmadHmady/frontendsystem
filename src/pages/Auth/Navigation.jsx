@@ -59,21 +59,27 @@ const Navigation = () => {
           className="flex items-center transition-transform transform hover:opacity-80"
         >
           <AiOutlineHome className="icone-menu-home ml-2 mt-[3rem]" size={26} />
-          <span className=" nav-item-name mt-[3rem]">الرئيسية</span> 
+          <span className=" nav-item-name mt-[3rem]">الرئيسية</span>
         </Link>
 
         <Link
           to="/shop"
           className="flex items-center transition-transform transform hover:opacity-80"
         >
-          <AiOutlineShopping className="icone-menu-home ml-2 mt-[3rem]" size={26} />
-          <span className=" nav-item-name mt-[3rem]">المنتجات</span>  
+          <AiOutlineShopping
+            className="icone-menu-home ml-2 mt-[3rem]"
+            size={26}
+          />
+          <span className=" nav-item-name mt-[3rem]">المنتجات</span>
         </Link>
 
         <Link to="/cart" className="flex relative">
           <div className=" navigation-container-menu-other flex items-center transition-transform transform hover:opacity-80">
-            <AiOutlineShoppingCart className="icone-menu-home mt-[3rem] ml-2" size={26} />
-            <span className=" nav-item-name mt-[3rem]">السلة</span>  
+            <AiOutlineShoppingCart
+              className="icone-menu-home mt-[3rem] ml-2"
+              size={26}
+            />
+            <span className=" nav-item-name mt-[3rem]">السلة</span>
           </div>
 
           <div className="absolute top-9 cart-phone-counter">
@@ -85,13 +91,15 @@ const Navigation = () => {
               </span>
             )}
           </div>
-
         </Link>
 
         <Link to="/addserialNumber" className="flex relative">
           <div className="navigation-container-menu-other flex justify-center items-center transition-transform transform hover:opacity-80">
-            <FaPlusCircle  className="icone-menu-home mt-[3rem] ml-2" size={20} />
-            <span className=" nav-item-name mt-[3rem]">إضافة منتج</span> 
+            <FaPlusCircle
+              className="icone-menu-home mt-[3rem] ml-2"
+              size={20}
+            />
+            <span className=" nav-item-name mt-[3rem]">إضافة منتج</span>
             {/* <FavoritesCount /> */}
           </div>
         </Link>
@@ -179,7 +187,10 @@ const Navigation = () => {
             )}
 
             <li>
-              <Link to="/addserialNumber" className="block px-4 py-2 hover:bg-gray-100">
+              <Link
+                to="/addserialNumber"
+                className="block px-4 py-2 hover:bg-gray-100"
+              >
                 إضافة منتج
               </Link>
             </li>
@@ -226,4 +237,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-

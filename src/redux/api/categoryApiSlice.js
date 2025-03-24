@@ -30,7 +30,6 @@ export const categoryApiSlice = apiSlice.injectEndpoints({
       query: () => `${CATEGORY_URL}/categories`,
     }),
 
-    // ✅ إضافة استعلام جديد لجلب تفاصيل الفئة بناءً على categoryId
     getCategoryById: builder.query({
       query: (categoryId) => `${CATEGORY_URL}/${categoryId}`,
     }),
@@ -42,5 +41,5 @@ export const {
   useUpdateCategoryMutation,
   useDeleteCategoryMutation,
   useFetchCategoriesQuery,
-  useGetCategoryByIdQuery, // ✅ تصدير الـ hook الجديد
+  useGetCategoryByIdQuery,
 } = categoryApiSlice;

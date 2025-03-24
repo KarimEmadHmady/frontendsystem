@@ -5,7 +5,7 @@ const checkExpiration = () => {
   if (expirationTime && new Date().getTime() > expirationTime) {
     localStorage.removeItem("userInfo");
     localStorage.removeItem("expirationTime");
-    localStorage.removeItem("loginTime"); 
+    localStorage.removeItem("loginTime");
 
     return null;
   }
@@ -34,8 +34,7 @@ const authSlice = createSlice({
       state.userInfo = null;
       localStorage.removeItem("userInfo");
       localStorage.removeItem("expirationTime");
-      localStorage.removeItem("loginTime"); 
-
+      localStorage.removeItem("loginTime");
     },
   },
 });

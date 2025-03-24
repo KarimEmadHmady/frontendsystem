@@ -1,20 +1,27 @@
 import { Link, useParams } from "react-router-dom";
 import Message from "../../components/Message";
 import Loader from "../../components/Loader";
-import { useGetOrderDetailsQuery , useDeleteOrderMutation } from "../../redux/api/orderApiSlice";
+import {
+  useGetOrderDetailsQuery,
+  useDeleteOrderMutation,
+} from "../../redux/api/orderApiSlice";
 
 const Order = () => {
   const { id: orderId } = useParams();
-  const { data: order, refetch, isLoading, error } = useGetOrderDetailsQuery(orderId);
+  const {
+    data: order,
+    refetch,
+    isLoading,
+    error,
+  } = useGetOrderDetailsQuery(orderId);
   const [deleteOrder, { isLoading: isDeleting }] = useDeleteOrderMutation();
-
 
   const handleDelete = async () => {
     if (window.confirm("هل أنت متأكد من حذف الطلب؟")) {
       try {
         await deleteOrder(orderId).unwrap();
         alert("تم حذف الطلب بنجاح!");
-        window.location.href = "/user-orders"; 
+        window.location.href = "/user-orders";
       } catch (err) {
         alert("حدث خطأ أثناء الحذف!");
       }
@@ -38,7 +45,7 @@ const Order = () => {
                     <th className="p-2">صورة الامنتج </th>
                     <th className="p-2">اسم المنتج</th>
                     <th className="p-2">رقم السيريال</th>
-                   
+
                     <th className="p-2">التاريخ و الوقت</th>
                     <th className="p-2">الاجمالى</th>
                   </tr>
@@ -60,7 +67,6 @@ const Order = () => {
                       </td>
                       <td className="p-2 text-center">{item.serialnumber}</td>
 
-                     
                       <td className="p-2 text-center">
                         {new Date(order.createdAt).toLocaleString("en-US", {
                           year: "numeric",
@@ -74,7 +80,6 @@ const Order = () => {
                       <td className="p-2 text-center">
                         L.E {Number(item.price).toFixed(2)}
                       </td>
-
                     </tr>
                   ))}
                 </tbody>
@@ -88,7 +93,8 @@ const Order = () => {
         <div className="mt-5 border-gray-300 pb-4 mb-4">
           <h2 className="text-xl font-bold mb-2">معلومات الطلب</h2>
           <p className="mb-4 mt-4">
-            <strong className="text-[#5f2476]">رقم الطلب:  </strong> <div>{order._id}</div>
+            <strong className="text-[#5f2476]">رقم الطلب: </strong>{" "}
+            <div>{order._id}</div>
           </p>
 
           <p className="mb-4">
@@ -97,7 +103,8 @@ const Order = () => {
           </p>
 
           <p className="mb-4">
-            <strong className="text-[#5f2476]">البريد الالكترونى:</strong> {order.user.email}
+            <strong className="text-[#5f2476]">البريد الالكترونى:</strong>{" "}
+            {order.user.email}
           </p>
 
           <p className="mb-4">
@@ -123,7 +130,6 @@ const Order = () => {
         <div className="flex justify-between mb-2">
           <span>اجمالى عدد المنتجات فى الطلب</span>
           <span>{order.orderItems.length}</span>
-
         </div>
 
         <div className="flex justify-between mb-2">
@@ -135,18 +141,16 @@ const Order = () => {
           <span>اجمالى السعر </span>
           <span>L.E {order.itemsPrice}</span>
         </div>
-            <div>
-              <button
-                onClick={handleDelete}
-                className="bg-red-500 text-white px-4 py-2 rounded"
-                disabled={isDeleting}
-              >
-                {isDeleting ? "جارِ الحذف..." : "حذف الطلب"}
-              </button>
-          
-          </div>
+        <div>
+          <button
+            onClick={handleDelete}
+            className="bg-red-500 text-white px-4 py-2 rounded"
+            disabled={isDeleting}
+          >
+            {isDeleting ? "جارِ الحذف..." : "حذف الطلب"}
+          </button>
+        </div>
       </div>
-
     </div>
   );
 };

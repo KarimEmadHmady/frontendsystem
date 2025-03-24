@@ -113,8 +113,6 @@ const AdminProductUpdate = () => {
     }
   };
 
-
-
   return (
     <div className="container xl:mx-[9rem] sm:mx-[0] margine-btn-phone">
       <div className="flex flex-col md:flex-row">
@@ -184,14 +182,22 @@ const AdminProductUpdate = () => {
               onChange={(e) => setCategory(e.target.value)}
             >
               {categories.map((c) => (
-                <option key={c._id} value={c._id}>{c.name}</option>
+                <option key={c._id} value={c._id}>
+                  {c.name}
+                </option>
               ))}
             </select>
 
-            <button onClick={handleSubmit} className="py-4 px-10 mt-5 rounded-lg bg-green-600">
+            <button
+              onClick={handleSubmit}
+              className="py-4 px-10 mt-5 rounded-lg bg-green-600"
+            >
               تحديث
             </button>
-            <button onClick={handleDelete} className="py-4 px-10 mt-5 rounded-lg bg-red-600 ml-4">
+            <button
+              onClick={handleDelete}
+              className="py-4 px-10 mt-5 rounded-lg bg-red-600 ml-4"
+            >
               حذف
             </button>
           </div>

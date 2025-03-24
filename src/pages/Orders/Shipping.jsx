@@ -8,7 +8,9 @@ const Shipping = () => {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
 
-  const [serialNumber, setSerialNumber] = useState(shippingAddress.address || "");
+  const [serialNumber, setSerialNumber] = useState(
+    shippingAddress.address || ""
+  );
   const [productName, setProductName] = useState(shippingAddress.city || "");
   const [salesman, setSalesman] = useState(shippingAddress.country || "");
 
@@ -40,8 +42,10 @@ const Shipping = () => {
       <ProgressSteps step1 step2 />
       <div className="mt-[10rem] flex justify-around items-center flex-wrap">
         <form onSubmit={submitHandler} className="w-[40rem]">
-          <h1 className="text-2xl font-semibold mb-4 px-5">تضف المعلومات الاتية</h1>
-          
+          <h1 className="text-2xl font-semibold mb-4 px-5">
+            تضف المعلومات الاتية
+          </h1>
+
           <div className="mb-4">
             <label className="block text-white mb-2"> رقم السيريال</label>
             <input

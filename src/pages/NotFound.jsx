@@ -18,14 +18,13 @@ const NotFound = () => {
           >
             Go back home
           </Link>
-
         </div>
       </div>
-      <img 
-  src="https://i.imgur.com/qIufhof.png" 
-  alt="404 Not Found" 
-  className="w-1/2 mb-8"
-/>
+      <img
+        src="https://i.imgur.com/qIufhof.png"
+        alt="404 Not Found"
+        className="w-1/2 mb-8"
+      />
     </main>
   );
 };

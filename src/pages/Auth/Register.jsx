@@ -30,28 +30,30 @@ const Register = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-  
+
     if (password !== confirmPassword) {
       toast.error("كلمات المرور غير متطابقة");
     } else {
       try {
         await register({ username, email, password }).unwrap();
         toast.success("تم تسجيل المستخدم بنجاح");
-        navigate("/login"); 
+        navigate("/login");
       } catch (err) {
         console.log(err);
         toast.error(err.data.message || "فشل التسجيل");
       }
     }
   };
-  
-  
+
   return (
     <section className="page-login-container pr-[10rem] flex flex-wrap">
       <div className="ml-[4rem] mt-[5rem]">
         <h1 className="text-2xl font-semibold mb-4">حساب جديد</h1>
 
-        <form onSubmit={submitHandler} className="container w-[40rem] class-page-login-reg">
+        <form
+          onSubmit={submitHandler}
+          className="container w-[40rem] class-page-login-reg"
+        >
           <div className="my-[2rem]">
             <label
               htmlFor="name"

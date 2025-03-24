@@ -1,16 +1,15 @@
-
 import { Outlet, useNavigate } from "react-router-dom";
 import Navigation from "./pages/Auth/Navigation";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "./redux/features/auth/authSlice"; 
+import { logout } from "./redux/features/auth/authSlice";
 
 const App = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { userInfo } = useSelector((state) => state.auth); 
+  const { userInfo } = useSelector((state) => state.auth);
 
   useEffect(() => {
     const checkExpiration = () => {
@@ -18,7 +17,7 @@ const App = () => {
 
       if (expirationTime && new Date().getTime() > expirationTime) {
         dispatch(logout());
-        navigate("/login"); 
+        navigate("/login");
       }
     };
 
@@ -32,13 +31,13 @@ const App = () => {
       if (timeRemaining > 0) {
         const timeout = setTimeout(() => {
           dispatch(logout());
-          navigate("/login"); 
+          navigate("/login");
         }, timeRemaining);
 
         return () => clearTimeout(timeout);
       } else {
         dispatch(logout());
-        navigate("/login"); 
+        navigate("/login");
       }
     }
 
@@ -58,4 +57,3 @@ const App = () => {
 };
 
 export default App;
-

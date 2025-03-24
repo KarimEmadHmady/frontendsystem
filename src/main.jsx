@@ -1,4 +1,3 @@
-
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -52,7 +51,6 @@ const router = createBrowserRouter(
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/shop" element={<Shop />} />
-      
 
       {/* Registered users */}
       <Route path="" element={<PrivateRoute />}>
@@ -61,7 +59,7 @@ const router = createBrowserRouter(
         <Route path="/shipping" element={<Shipping />} />
         <Route path="/placeorder" element={<PlaceOrder />} />
         <Route path="/order/:id" element={<Order />} />
-        <Route path="/addserialNumber" element={<UpdateProduct />} /> 
+        <Route path="/addserialNumber" element={<UpdateProduct />} />
       </Route>
 
       <Route path="/admin" element={<AdminRoute />}>

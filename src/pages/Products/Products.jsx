@@ -97,7 +97,6 @@ const Product = () => {
                 {product.serialnumber}
               </p>
               <p className="text-5xl my-4 font-extrabold">L.E{product.price}</p>
-              {/* --------------------------------------------------- */}
 
               <div className="flex items-center justify-between w-[20rem]">
                 <div className="one">
@@ -162,7 +161,6 @@ const Product = () => {
                   Add To Cart
                 </button>
               </div>
-              {/* --------------------------------------------------- */}
             </div>
           </div>
 

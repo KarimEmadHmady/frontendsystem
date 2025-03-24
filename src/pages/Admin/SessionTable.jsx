@@ -7,7 +7,7 @@ import ClearSessionsButton from "./ClearSessionsButton";
 
 const SessionTable = () => {
   const [sessions, setSessions] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchAddress = async (latitude, longitude) => {
     try {
@@ -15,7 +15,7 @@ const SessionTable = () => {
         `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=b5b55deb46ef473fa730a340f28684a3`
       );
       const data = await response.json();
-  
+
       if (data.results.length > 0) {
         return data.results[0].formatted;
       } else {
@@ -26,15 +26,16 @@ const SessionTable = () => {
       return "خطأ في جلب العنوان";
     }
   };
-  
 
   useEffect(() => {
     const fetchSessions = async () => {
-      setIsLoading(true); 
+      setIsLoading(true);
       try {
-        const response = await axios.get(`${BASE_URL}/api/sessions` ,  { withCredentials: true } ) 
-        
-       const data = response.data;
+        const response = await axios.get(`${BASE_URL}/api/sessions`, {
+          withCredentials: true,
+        });
+
+        const data = response.data;
 
         const sessionsWithAddress = await Promise.all(
           data.map(async (session) => {
@@ -64,7 +65,7 @@ const SessionTable = () => {
       <AdminMenu />
       <h2 className="text-xl font-bold mb-4 text-center">سجلات التسجيل</h2>
 
-      {isLoading ? ( 
+      {isLoading ? (
         <p className="text-center text-lg font-bold">Loading ...</p>
       ) : (
         <>
@@ -82,14 +83,14 @@ const SessionTable = () => {
           >
             تحميل كـ Excel
           </CSVLink>
-          
+
           <div className="p-10">
             <h1 className="text-2xl font-bold mb-4">Session Management</h1>
             <ClearSessionsButton />
           </div>
 
           <table className="w-full border-collapse border border-gray-300 mt-4">
-            <thead >
+            <thead>
               <tr className="bg-black-200">
                 <th className="border p-2">#</th>
                 <th className="border p-2">الصورة</th>
@@ -100,7 +101,7 @@ const SessionTable = () => {
                 <th className="border p-2">وقت تسجيل الدخول</th>
               </tr>
             </thead>
-            <tbody >
+            <tbody>
               {sessions.map((session, index) => (
                 <tr key={session._id} className="text-center">
                   <td className="border p-2">{index + 1}</td>
@@ -115,7 +116,9 @@ const SessionTable = () => {
                       "❌ لا يوجد صورة"
                     )}
                   </td>
-                  <td className="border p-2">{session.username || "غير متوفر"}</td>
+                  <td className="border p-2">
+                    {session.username || "غير متوفر"}
+                  </td>
                   <td className="border p-2">{session.email || "غير متوفر"}</td>
                   <td className="border p-2">
                     {session.location

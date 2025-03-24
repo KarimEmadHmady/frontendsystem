@@ -1,10 +1,12 @@
 import Message from "../../components/Message";
 import Loader from "../../components/Loader";
 import { Link } from "react-router-dom";
-import { useGetOrdersQuery  , useDeleteAllOrdersMutation } from "../../redux/api/orderApiSlice";
+import {
+  useGetOrdersQuery,
+  useDeleteAllOrdersMutation,
+} from "../../redux/api/orderApiSlice";
 import AdminMenu from "./AdminMenu";
 import { CSVLink } from "react-csv";
-
 
 const OrderList = () => {
   const { data: orders, isLoading, error } = useGetOrdersQuery();
@@ -15,14 +17,13 @@ const OrderList = () => {
       try {
         await deleteAllOrders().unwrap();
         alert("✅ تم حذف جميع الطلبات بنجاح!");
-        window.location.href = "/admin/orderlist"; // إعادة التوجيه بعد الحذف
+        window.location.href = "/admin/orderlist";
       } catch (err) {
         alert("❌ حدث خطأ أثناء حذف الطلبات!");
       }
     }
   };
 
-  
   return (
     <>
       {isLoading ? (
@@ -38,9 +39,9 @@ const OrderList = () => {
           <CSVLink
             data={orders.map((order) => ({
               "Order ID": order._id,
-              "Username": order.user ? order.user.username : "N/A",
+              Username: order.user ? order.user.username : "N/A",
               "Total Price": `L.E ${order.totalPrice}`,
-              "Date": new Date(order.createdAt).toLocaleString("en-US", {
+              Date: new Date(order.createdAt).toLocaleString("en-US", {
                 year: "numeric",
                 month: "2-digit",
                 day: "2-digit",
@@ -48,8 +49,10 @@ const OrderList = () => {
                 minute: "2-digit",
                 hour12: true,
               }),
-              "Items": order.orderItems.map((item) => item.serialnumber).join(", "),
-              "Brand": order.orderItems[0].brand,
+              Items: order.orderItems
+                .map((item) => item.serialnumber)
+                .join(", "),
+              Brand: order.orderItems[0].brand,
             }))}
             filename="orders.csv"
             className="mb-4 p-2 bg-green-500 text-white rounded"

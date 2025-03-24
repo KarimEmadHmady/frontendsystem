@@ -23,36 +23,39 @@ const PlaceOrder = () => {
     }
   }, [cart.shippingAddress.address, navigate]);
 
-
-  const itemsPrice = cart.cartItems.reduce((acc, item) => acc + (Number(item.price) || 0), 0);
-
+  const itemsPrice = cart.cartItems.reduce(
+    (acc, item) => acc + (Number(item.price) || 0),
+    0
+  );
 
   const placeOrderHandler = async () => {
     try {
-      const totalPrice = Number(itemsPrice.toFixed(2)); 
-  
+      const totalPrice = Number(itemsPrice.toFixed(2));
+
       if (isNaN(totalPrice)) {
         toast.error("خطأ في الحساب: الإجمالي غير صالح!");
         return;
       }
-  
+
       const res = await createOrder({
         orderItems: cart.cartItems.map((item) => ({
           ...item,
-          qty: 1, 
+          qty: 1,
         })),
         shippingAddress: cart.shippingAddress,
-        itemsPrice: totalPrice, 
+        itemsPrice: totalPrice,
         totalPrice,
       }).unwrap();
-  
+
       dispatch(clearCartItems());
       navigate(`/order/${res._id}`);
     } catch (error) {
-      toast.error("Error creating order: " + (error.data?.message || error.message));
+      toast.error(
+        "Error creating order: " + (error.data?.message || error.message)
+      );
     }
   };
-  
+
   return (
     <>
       <ProgressSteps step1 step2 step3 />
@@ -96,10 +99,11 @@ const PlaceOrder = () => {
         )}
 
         <div className="mt-8">
-          <h2 className="text-2xl font-semibold mb-5 text-center">ملخص الطلب</h2>
+          <h2 className="text-2xl font-semibold mb-5 text-center">
+            ملخص الطلب
+          </h2>
           <div className="flex justify-between flex-wrap p-8 bg-[#181818] page-rtl">
-
-          <div>
+            <div>
               <h2 className="text-2xl font-semibold mb-1">معلومات الطلب</h2>
               <p>
                 <strong>تفاصيل الطلب:</strong>
@@ -109,22 +113,19 @@ const PlaceOrder = () => {
               </p>
             </div>
 
-
-
             {error && <Message variant="danger">{error.data.message}</Message>}
-
 
             <ul className="text-lg">
               <li>
-              <span className="font-semibold mb-4">عدد العناصر: </span> {cart.cartItems.length}
-
+                <span className="font-semibold mb-4">عدد العناصر: </span>{" "}
+                {cart.cartItems.length}
               </li>
 
               <li>
-                <span className="font-semibold mb-4">الإجمالي:</span> جنيه {itemsPrice.toFixed(2)}
+                <span className="font-semibold mb-4">الإجمالي:</span> جنيه{" "}
+                {itemsPrice.toFixed(2)}
               </li>
             </ul>
-
           </div>
 
           <button

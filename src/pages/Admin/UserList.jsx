@@ -9,7 +9,7 @@ import {
 } from "../../redux/api/usersApiSlice";
 import { toast } from "react-toastify";
 import AdminMenu from "./AdminMenu";
-import { CSVLink } from "react-csv";  // إضافة مكتبة CSVLink
+import { CSVLink } from "react-csv";
 
 const UserList = () => {
   const { data: users, refetch, isLoading, error } = useGetUsersQuery();
@@ -68,13 +68,12 @@ const UserList = () => {
         </Message>
       ) : (
         <div className="flex flex-col items-center">
-          {/* إضافة زر تحميل CSV */}
           <CSVLink
             data={users.map((user) => ({
               "User ID": user._id,
-              "Name": user.username,
-              "Email": user.email,
-              "Admin": user.isAdmin ? "Yes" : "No",
+              Name: user.username,
+              Email: user.email,
+              Admin: user.isAdmin ? "Yes" : "No",
               "Created At": new Date(user.createdAt).toLocaleString("en-US", {
                 year: "numeric",
                 month: "2-digit",
@@ -93,7 +92,6 @@ const UserList = () => {
           <table className="w-full md:w-4/5 mx-auto">
             <thead>
               <tr>
-                
                 <th className="px-4 py-2 text-left">NAME</th>
                 <th className="px-4 py-2 text-left">EMAIL</th>
                 <th className="px-4 py-2 text-left">ADMIN</th>
@@ -101,10 +99,9 @@ const UserList = () => {
                 <th className="px-4 py-2"></th>
               </tr>
             </thead>
-            <tbody >
+            <tbody>
               {users.map((user) => (
                 <tr key={user._id}>
-                  
                   <td className="px-4 py-2">
                     {editableUserId === user._id ? (
                       <div className="flex items-center">

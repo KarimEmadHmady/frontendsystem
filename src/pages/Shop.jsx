@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios"; 
+import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts } from "../redux/features/shop/shopSlice";
 import Loader from "../components/Loader";
@@ -19,15 +19,17 @@ const Shop = () => {
         setLoading(true);
         setTimeout(async () => {
           const { data } = await axios.get(`${BASE_URL}/api/products`, {
-            withCredentials: true, 
+            withCredentials: true,
           });
 
-          console.log("📦 المنتجات:", data); 
+          console.log("📦 المنتجات:", data);
           dispatch(setProducts(data.products));
           setLoading(false);
-        }, 2000); 
+        }, 2000);
       } catch (err) {
-        const errorMessage = err.response?.data?.message || "فشل في جلب المنتجات، ادخل السيريال و اسم البراند من صفحة اضافة منتج.";
+        const errorMessage =
+          err.response?.data?.message ||
+          "فشل في جلب المنتجات، ادخل السيريال و اسم البراند من صفحة اضافة منتج.";
         setError(errorMessage);
         console.error("❌ API Error:", errorMessage);
         setLoading(false);
@@ -42,9 +44,7 @@ const Shop = () => {
   return (
     <div className="container mx-auto margine-btn-phone">
       <div className="p-3 container-products-shoppage">
-        <h2 className="h4 text-center mb-2">
-          {products?.length} منتجات
-        </h2>
+        <h2 className="h4 text-center mb-2">{products?.length} منتجات</h2>
         <div className="flex flex-wrap justify-center">
           {loading ? (
             <Loader className="text-center" />
@@ -64,4 +64,3 @@ const Shop = () => {
 };
 
 export default Shop;
-
