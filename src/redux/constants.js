@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://backendsystem.vercel.app';
+export const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 // export const BASE_URL = 'http://localhost:5001';
 
 export const USERS_URL = `${BASE_URL}/api/users`;
